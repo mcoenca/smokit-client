@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smokit</title>
+  </head>
+
+  <body>
+
+<!--Partie de code qui sera utilisée en non connecté-->
+<div class='disconnected'>
+<p id="error1" style="display:none; color:red">Username non existant!</p>	
+<p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
+	<h1>Smokit, la partie Web</h1>
+	<h2 id="title">Username :</h2>
+		<input id="username_connect" type="text">
+		<input id="connect" type="submit" value="Connection">
+	<br/><br/>
+
+	<p> Pas encore Inscrit ? </p>
+	<h2>Nouveau Username :</h2>
+
+		<input id="username_create" type="text">
+		<input id="create" type="submit" value="Soumettre">
+	<p> 
+		<a href="/users">Manage Users</a><br/>
+		<a href="/smokes">Manage Smokes</a>
+	</p>
+</div>
+
+<!--Partie de code qui sera utilisée en connecté-->
+<div class='connected'>
+	<h2 id="title_smoke"></h2>
+<!--Beaucoup d'animations Jquery à faire la-->
+	<input id="smoke" type="submit" value="New Smoke">
+	<br/>
+	<input id="go_smoke_stats" type="submit" value="Voir l'évolution de ton cancer !">
+</div>
+
+<!--Partie de code qui sera utilisé en stats-->
+<div class='stats'>
+	<h2 id="title_stats"></h2>
+	<table id="stat_table">
+		<tr id="title_tr">
+			<th>Date</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+		</tr>
+	</table>
+<input id="go_stats_smoke" type="submit" value="Encore se rapprocher du cancer ?">
+</div>
+
+</body>
+</html>
