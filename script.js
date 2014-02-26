@@ -86,13 +86,13 @@ $(function(){
 			},
 			success: function(donnees){
 				//Smoke réussie ! On affiche l'animation pour le montrer au monsieur
-			alert('Smoke créée...       Tu as perdu 1min de ton espérance de vie et 0.3€, champion!');
+			alert('Smoke créée... à :'+ new Date());
 			},
 			error: function(xhr,textStatus,errorThrown){
 				//Connection ratée... On affiche une animation pour le montrer au monsieur
 				//console.log(textStatus);
 				//console.log(errorThrown);
-			alert("La connexion au server n'a pas réussi, mais tu vas quand même avoir le cancer.. LOL");
+			alert("La connection au server n'a pas réussi, c'est dommage");
 			}
 		});
 

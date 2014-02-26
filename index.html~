@@ -4,6 +4,7 @@
     <title>Smokit</title>
 <script src="jquery.js"></script>
 <script src="script.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   </head>
   <body>
 
