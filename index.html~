@@ -2,8 +2,9 @@
 <html>
   <head>
     <title>Smokit</title>
+<script src="jquery.js"></script>
+<script src="script.js"></script>
   </head>
-
   <body>
 
 <!--Partie de code qui sera utilisée en non connecté-->
