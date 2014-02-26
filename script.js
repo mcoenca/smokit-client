@@ -11,9 +11,12 @@ $(function(){
 		username=$('#username_connect').val();
 		//on fait la requete GET correspondante
 		$.ajax({
-			url: "/users/name/"+username+".json",
+			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
 			dataType: "json",
 			type: "get",
+			headers: { 
+        			Accept : "application/json"
+   				 },
 			success: function(donnees){
 				//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 
@@ -40,9 +43,12 @@ $(function(){
 		username=$('#username_create').val();
 		//on fait la requete POST correspondante
 		$.ajax({
-			url: "/users",
+			url: "http://holdit.herokuapp.com/users",
 			type: "post",
 			dataType: "json",
+			headers: { 
+        			Accept : "application/json"
+   				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=", "user[name]":username},
 			success: function(donnees){
 				//Création réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
@@ -61,14 +67,17 @@ $(function(){
 
 	});
 
-	//Quand on clique sur le bouton d'id 'Nouvel utilisateur'
+	//Quand on clique sur le bouton d'id 'NEW SMOKE'
 	$('#smoke').click(function() {
 		//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 		//on fait la requete POST correspondante
 		$.ajax({
-			url: "/newsmoke",
+			url: "http://holdit.herokuapp.com/newsmoke",
 			type: "post",
 			dataType: "json",
+   			headers: { 
+        			Accept : "application/json"
+   				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
 				"smoke[smoke_latitude]":1,
@@ -81,8 +90,8 @@ $(function(){
 			},
 			error: function(xhr,textStatus,errorThrown){
 				//Connection ratée... On affiche une animation pour le montrer au monsieur
-				console.log(textStatus);
-				console.log(errorThrown);
+				//console.log(textStatus);
+				//console.log(errorThrown);
 			alert("La connexion au server n'a pas réussi, mais tu vas quand même avoir le cancer.. LOL");
 			}
 		});
@@ -98,8 +107,11 @@ $(function(){
 		$("#title_stats").text("Tes stats, "+username+" !");
 	//requete ajax pour  remplir le tableau joli !
 		$.ajax({
-		url: "/users/name/"+username+".json",
+		url: "http://holdit.herokuapp.com/users/name/"+username+".json",
 		dataType: "json",
+		headers: { 
+        		Accept : "application/json"
+   			 },
 		type: "get",
 		success: function(donnees){
 			//Ca a marché, on va afficher bien les données dans le DOM .stats
