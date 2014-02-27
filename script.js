@@ -4,6 +4,28 @@ var username='';
 //Execute après le chargement du DOM
 var ready = function(){
 
+alert('page prete');
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// Cordova is ready
+//
+function onDeviceReady() {
+var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
+navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+}
+
+// onSuccess Geolocation
+//
+function onSuccess(position) {
+alert('success');
+}
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+alert('code: ' + error.code + '\n' +
+'message: ' + error.message + '\n');
+}
 //Accueil
 	$(".disconnected").show();
 
