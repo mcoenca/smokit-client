@@ -3,8 +3,13 @@
   <head>
     <title>Smokit</title>
 <script src="jquery.js"></script>
+<script src="jquery.alphanum.js"></script>
 <script src="script.js"></script>
+<script src="transition.js"></script>
+<script src="connections.js"></script>
+<link rel="stylesheet" type="text/css" href="home.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
   </head>
   <body>
 
@@ -12,30 +17,35 @@
 <div class='disconnected'>
 <p id="error1" style="display:none; color:red">Username non existant!</p>	
 <p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
-	<h1>Smokit, la partie Web</h1>
+	<h1>Hold it !</h1>
 	<h2 id="title">Username :</h2>
+
 		<input id="username_connect" type="text">
-		<input id="connect" type="submit" value="Connection">
+	   	<img id="connect" src="orange ok.jpg" height="19em">
 	<br/><br/>
 
-	<p> Pas encore Inscrit ? </p>
-	<h2>Nouveau Username :</h2>
-
+	<p> Not registered yet ? </p>
+	<h2>New User :</h2>
 		<input id="username_create" type="text">
-		<input id="create" type="submit" value="Soumettre">
+		<img id="create" src="orange ok.jpg" height="19em">
+	<p> 
+		<a href="/users">Manage Users</a><br/>
+		<a href="/smokes">Manage Smokes</a>
+	</p>
 </div>
 
-<!--Partie de code qui sera utilisée en connecté-->
-<div class='connected'>
+<<!--Partie de code qui sera utilisée en connecté-->
+<div class='connected' style="display:none">
 	<h2 id="title_smoke"></h2>
 <!--Beaucoup d'animations Jquery à faire la-->
-	<input id="smoke" type="submit" value="New Smoke">
+	<img id="smoke" src="bouton clope.png">
 	<br/>
-	<input id="go_smoke_stats" type="submit" value="Vers tes statistiques">
+	<input id="go_smoke_stats" type="submit" value="My Stats !">
+	<p><a id="go_smoke_home">Se déconnecter</a></p>
 </div>
 
 <!--Partie de code qui sera utilisé en stats-->
-<div class='stats'>
+<div class='stats' style="display:none">
 	<h2 id="title_stats"></h2>
 	<table id="stat_table">
 		<tr id="title_tr">
@@ -44,7 +54,7 @@
 			<th>Longitude</th>
 		</tr>
 	</table>
-<input id="go_stats_smoke" type="submit" value="Nouvelle Smoke ?">
+<input id="go_stats_smoke" type="submit" value="Retour cigarettes">
 </div>
 
 </body>
