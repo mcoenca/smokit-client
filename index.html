@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Smokit</title>
+    <title>Hold it !</title>
 <script src="jquery.js"></script>
 <script src="jquery.alphanum.js"></script>
 <script src="script.js"></script>
@@ -21,27 +21,27 @@
 	<h2 id="title">Username :</h2>
 
 		<input id="username_connect" type="text">
-	   	<img id="connect" src="assets/orange_ok.jpg" height="19em">
+	   	<img id="connect" src="assets/orange_ok.jpg" style="height:19px">
 	<br/><br/>
 
 	<p> Not registered yet ? </p>
 	<h2>New User :</h2>
 		<input id="username_create" type="text">
-		<img id="create" src="assets/orange_ok.jpg" height="19em">
-	<p> 
-		<a href="/users">Manage Users</a><br/>
-		<a href="/smokes">Manage Smokes</a>
-	</p>
+		<img id="create" src="assets/orange_ok.jpg" style="height:19px">
+
+	<address>Made March 2014<br>
+	powered by 'Connectés 4ever'</address>
+
 </div>
 
 <!--Partie de code qui sera utilisée en connecté-->
 <div class='connected' style="display:none">
 	<h2 id="title_smoke"></h2>
 <!--Beaucoup d'animations Jquery à faire la-->
-	<img id="smoke" src="assets/bouton clope.png">
+	<img id="smoke" src="assets/clope_allumee.png">
 	<br/>
-	<input id="go_smoke_stats" type="submit" value="My Stats !">
-	<p><a id="go_smoke_home">Se déconnecter</a></p>
+	<img id="go_smoke_stats" src="assets/icon_stats_white.png" style="height:40px">
+	<img id="go_smoke_home" src="assets/icon_logout.png" style="height:40px">
 </div>
 
 <!--Partie de code qui sera utilisé en stats-->
