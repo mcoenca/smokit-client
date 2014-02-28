@@ -12,18 +12,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 alert('onDeviceReady');
 var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
-navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+navigator.geolocation.getCurrentPosition(onSuccess);
 }
 
 // onSuccess Geolocation
 //
 alert('test1');
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+navigator.geolocation.getCurrentPosition(onSuccess);
 alert('test2');
-geolocation.getCurrentPosition(onSuccess, onError);
+geolocation.getCurrentPosition(onSuccess);
 function onSuccess(position) {
 alert('success');
 }
+
+onSuccess('prout');
 
 // onError Callback receives a PositionError object
 //
@@ -32,7 +34,7 @@ alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
 }
 //Accueil
-	$(".disconnected").show();
+$(".disconnected").show();
 alert('test3');
 //Réglage de ce qu'on accepte comme input grace au plugin jquery alphanum(). Evite création d'utilisateurs aux noms mauvais pour les requetes. A COMPLETER DANS LE BACKEND
 	$(".restricted_input").alphanum();
