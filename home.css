@@ -3,8 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @font-face {
-    font-family: "space_1";
-    src: url('assets/space_1.ttf');
+    font-family:'space_1';
+    src: url('assets/space_1-webfont.eot');
+    src: url('assets/space_1-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/space_1-webfont.woff') format('woff'),
+         url('assets/space_1-webfont.ttf') format('truetype'),
+         url('assets/space_1-webfont.svg#space_1regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 @font-face {
@@ -21,14 +28,26 @@ body {
 
   #connect { 
     position: relative;
-    top: 0.35em;
-    left: -0.4em;
+    top: 2px;
+    left: -3px;
+  }
+
+  #username_connect { 
+    border: none;
+    height: 17px;
+    font-size: 16px;
+  }
+
+  #username_create { 
+    border: none;
+    height: 17px;
+    font-size: 16px;
   }
 
   #create { 
     position: relative;
-    top: 0.3em;
-    left: -0.4em;
+    top: 2px;
+    left: -3px;
   }
 
   h1 {
@@ -40,24 +59,7 @@ body {
     font-family: "space_1", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
     color: white
   }
-  ul.navbar {
-  	list-style-type: none;
-  	padding: 0;
-  	margin: 0;
-  	position: absolute;
-  	top: 2em;
-  	left: 1em;
-  	width:9em;
-  }
-  ul.navbar li {
-  	background: white;
-  	margin: 0.5em;
-  	padding: 0.3em;
-  	border-right: 1em solid black
-  }
-  ul.navbar a {
-  	text-decoration: none
-  }
+
   a:link {
   	color:#0099cc
   }
@@ -65,7 +67,10 @@ body {
   	color:#cc6600
   }
   address {
-  	margin-top: 1em;
-  	padding-top: 1em;
-  	border-top: thin dotted;
+    font-family: Helvetica;
+    font-size: 11px;
+    color:white;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted;
   }
