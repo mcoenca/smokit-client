@@ -16,6 +16,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 // onSuccess Geolocation
 //
+onSuccess('prout');
 alert('test1');
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 alert('test2');

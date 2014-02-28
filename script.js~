@@ -17,7 +17,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 // onSuccess Geolocation
 //
 alert('test1');
-navigator.geolocation.getCurrentPosition(onSuccess);
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
 alert('test2');
 geolocation.getCurrentPosition(onSuccess);
 var onSuccess = function($position) {
