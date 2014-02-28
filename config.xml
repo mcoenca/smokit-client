@@ -16,10 +16,5 @@
         Hardeep Shoker 
     </author>
 
-	<feature name="App">
-		<param name="android-package" value="http://org.apache.cordova.App"/>
-	</feature>
-	<feature name="Geolocation">
-		<param name="android-package" value="http://org.apache.cordova.GeoBroker"/>
-	</feature>
+<gap:plugin name="org.apache.cordova.geolocation" />
 </widget>
