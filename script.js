@@ -27,7 +27,7 @@ alert('success');
 onSuccess('prout');
 // onError Callback receives a PositionError object
 //
-alert('avantonerror';
+alert('avantonerror');
 var onError function($error) {
 alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
