@@ -17,7 +17,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 // onSuccess Geolocation
 //
 alert('test1');
-navigator.geolocation.getCurrentPosition(onSuccess);
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
 alert('test2');
 geolocation.getCurrentPosition(onSuccess);
 var onSuccess = function($position) {
@@ -28,9 +28,8 @@ onSuccess('prout');
 // onError Callback receives a PositionError object
 //
 alert('avantonerror');
-var onError function($error) {
-alert('code: ' + error.code + '\n' +
-'message: ' + error.message + '\n');
+var onError=function($error) {
+alert('error');
 };
 alert('apresonerror');
 //Accueil
