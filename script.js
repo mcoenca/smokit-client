@@ -4,7 +4,6 @@ var username='';
 //Execute après le chargement du DOM
 var ready = function(){
 
-alert('page prete');
 document.addEventListener("deviceready", onDeviceReady, false);
 
 // Cordova is ready
@@ -12,7 +11,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 alert('onDeviceReady');
 var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
-navigator.geolocation.getCurrentPosition(onSuccess);
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
 
 // onSuccess Geolocation
@@ -21,17 +20,19 @@ alert('test1');
 navigator.geolocation.getCurrentPosition(onSuccess);
 alert('test2');
 geolocation.getCurrentPosition(onSuccess);
-var onSuccess = function(position) {
+var onSuccess = function($position) {
 alert('success');
-}
+};
 
 onSuccess('prout');
 // onError Callback receives a PositionError object
 //
-function onError(error) {
+alert('avantonerror';
+var onError function($error) {
 alert('code: ' + error.code + '\n' +
 'message: ' + error.message + '\n');
-}
+};
+alert('apresonerror');
 //Accueil
 $(".disconnected").show();
 alert('test3');
