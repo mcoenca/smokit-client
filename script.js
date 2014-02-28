@@ -16,22 +16,23 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 // onSuccess Geolocation
 //
-onSuccess('prout');
-alert('test1');
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-alert('test2');
-geolocation.getCurrentPosition(onSuccess);
+
 var onSuccess = function($position) {
 alert('success');
 };
 
-onSuccess('prout');
-// onError Callback receives a PositionError object
-//
-alert('avantonerror');
 var onError=function($error) {
 alert('error');
 };
+
+alert('test1');
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+alert('test2');
+
+// onError Callback receives a PositionError object
+//
+alert('avantonerror');
+onSuccess('prout');
 alert('apresonerror');
 //Accueil
 $(".disconnected").show();
