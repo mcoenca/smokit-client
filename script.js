@@ -21,12 +21,11 @@ alert('test1');
 navigator.geolocation.getCurrentPosition(onSuccess);
 alert('test2');
 geolocation.getCurrentPosition(onSuccess);
-function onSuccess(position) {
+var onSuccess = function(position) {
 alert('success');
 }
 
 onSuccess('prout');
-
 // onError Callback receives a PositionError object
 //
 function onError(error) {
