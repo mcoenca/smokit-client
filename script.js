@@ -10,12 +10,17 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // Cordova is ready
 //
 function onDeviceReady() {
+alert('onDeviceReady');
 var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
 navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 }
 
 // onSuccess Geolocation
 //
+alert('test1');
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+alert('test2');
+geolocation.getCurrentPosition(onSuccess, onError);
 function onSuccess(position) {
 alert('success');
 }
