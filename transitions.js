@@ -69,3 +69,12 @@ var go_smoke_home = function() {
 		$(".disconnected").show();
 		$(".connected").hide();
 };
+
+//Quand on clique sur le bouton go_stats->home
+var go_stats_home = function() {
+		username='';
+		$(".disconnected").show();
+		$(".stats").hide();
+};
+
+

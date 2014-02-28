@@ -61,6 +61,10 @@ alert('code: ' + error.code + '\n' +
 	$('#go_smoke_home').click(function() {
 		go_smoke_home(); 
 	});
+//Quand on clique sur le bouton go_stats->home
+	$('#go_stats_home').click(function() {
+		go_stats_home(); 
+	});
 };
 
 //Vérifie si le reload de la page provient de rails, ou est normal, pour bien gérer le reload du javascript sur la page home
