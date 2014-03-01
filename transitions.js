@@ -25,6 +25,7 @@ var Connection_failure = function($textStatus,$errorThrown,$creation) {
 var Smoke_success = function($donnees) {
 	//Création de smoke réussie, petite animation
 	alert('Smoke créée... !');
+
 };
 
 var Smoke_failure = function($textStatus, $errorThrown) {
