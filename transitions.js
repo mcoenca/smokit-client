@@ -28,15 +28,15 @@ var Smoke_success = function($donnees) {
 
 	$('#smoke1').fadeOut( 100, function() {
     	//alert( "Animation1 complete." );
-    
+    	$('#smoke1').prop('disabled', true);
     	$('#smoke2').fadeOut( 5000, function() {
     		//alert( "Animation2 complete." );
 
     		$('#smoke1').delay(10000).show( 0, function() {
     			//alert( "Animation3 complete." );
-
+    			$('#smoke1').prop('disabled', false);
     			$('#smoke2').show( 0, function() {
-    			alert( "Animation4 complete." );
+    				//alert( "Animation4 complete." );
     			});
     		});
     	});	

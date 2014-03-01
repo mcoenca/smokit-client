@@ -54,8 +54,14 @@ $(".disconnected").show();
 	});
 
 //Quand on clique sur le bouton d'id 'Nouvelle smoke'
-	$('#smoke1').click(function() {
-		Smoke();
+	$('#cigarette').click(function() {
+		//insérer ici boucle if pour attendre une vingtaine de secondes
+		if ($('#smoke1').prop('disabled')==true) { 
+			alert("Attends un peu !");
+		}
+		else {
+			Smoke();
+		}
 	});
 
 //Quand on clique sur le bouton go_smoke -> stats
