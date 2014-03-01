@@ -47,10 +47,24 @@ $(".disconnected").show();
 	$('#connect').click(function() {
 		Connect();
 	});
+	//bouton animé en bleu
+	$('#connect').mousedown(function() {
+		this.src="assets/orange_ok_blue.jpg";
+	});
+	$('#connect').mouseup(function() {
+		this.src="assets/orange_ok_white.jpg";
+	});
 
 //Quand on clique sur le bouton d'id 'Nouvel utilisateur'
 	$('#create').click(function() {
 		Create();
+	});
+	//bouton animé en bleu
+	$('#create').mousedown(function() {
+		this.src="assets/orange_ok_blue.jpg";
+	});
+	$('#create').mouseup(function() {
+		this.src="assets/orange_ok_white.jpg";
 	});
 
 //Quand on clique sur le bouton d'id 'Nouvelle smoke'
