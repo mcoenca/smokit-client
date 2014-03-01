@@ -54,17 +54,8 @@ $(".disconnected").show();
 	});
 
 //Quand on clique sur le bouton d'id 'Nouvelle smoke'
-	$('#smoke').click(function() {
+	$('#smoke1').click(function() {
 		Smoke();
-		/*
-		$(['src:"assets/clope_eteinte.png"']).hide();
-		$(['src:"assets/clope_allumee.png"']).fadeIn("slow");
-		$(['src:"assets/clope_cramee.png"']).fadeIn("slow");
-		$(['src:"assets/clope_eteinte.png"']).show();
-		$(['src:"assets/clope_allumee.png"']).hide();
-		$(['src:"assets/clope_cramee.png"']).hide();
-		*/
-
 	});
 
 //Quand on clique sur le bouton go_smoke -> stats

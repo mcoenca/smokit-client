@@ -26,6 +26,17 @@ body {
     background-image:url('assets/fond_app.jpg');
   }
 
+  #cigarette {
+    height: 200px;
+    width: 200px;
+    position: relative;
+  }
+
+  #cigarette img {
+    position: absolute;
+    left:0px;
+  }
+
   #connect { 
     position: relative;
     top: 2px;

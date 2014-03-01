@@ -24,7 +24,30 @@ var Connection_failure = function($textStatus,$errorThrown,$creation) {
 //Création ou error de smoke
 var Smoke_success = function($donnees) {
 	//Création de smoke réussie, petite animation
-	alert('Smoke créée... !');
+	//alert('Smoke créée... !');
+
+	$('#smoke1').fadeOut( 100, function() {
+    	//alert( "Animation1 complete." );
+    
+    	$('#smoke2').fadeOut( 5000, function() {
+    		//alert( "Animation2 complete." );
+
+    		$('#smoke1').delay(10000).show( 0, function() {
+    			//alert( "Animation3 complete." );
+
+    			$('#smoke2').show( 0, function() {
+    			alert( "Animation4 complete." );
+    			});
+    		});
+    	});	
+    });
+
+
+	//$(['src:"assets/clope_allumee.png"']).fadeIn("slow");
+	//$(['src:"assets/clope_cramee.png"']).fadeIn("slow");
+	//$(['src:"assets/clope_eteinte.png"']).show();
+	//$(['src:"assets/clope_allumee.png"']).hide();
+	//$(['src:"assets/clope_cramee.png"']).hide();
 
 };
 
