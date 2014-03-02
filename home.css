@@ -41,8 +41,8 @@ body {
 
   #connect { 
     position: relative;
-    top: 2px;
-    left: -3px;
+    top: 3px;
+    left: -6px;
   }
 
   #username_connect { 
@@ -58,9 +58,9 @@ body {
   }
 
   #create { 
-    position: relative;
-    top: 2px;
-    left: -3px;
+    positon: relative;
+    top: 3px;
+    left: -6px;
   }
 
   h1 {
