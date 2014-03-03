@@ -41,10 +41,14 @@ alert('apresonerror');
 
 */
 
+if($.cookie('username') && $.cookie('username')!='null'){
+//Si on est déja connecté, on triche (haha) et on se connecte automatiquement avec deja_connect=true
+Connect(true);	
+}
+else {
 //Accueil
 $(".disconnected").show();
-//alert('test3');
-
+}
 //Réglage de ce qu'on accepte comme input grace au plugin jquery alphanum(). Evite création d'utilisateurs aux noms mauvais pour les requetes. A COMPLETER DANS LE BACKEND
 	$(".restricted_input").alphanum();
 

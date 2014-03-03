@@ -5,7 +5,7 @@ var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 		$(".connected").show();
 		$(".disconnected").hide();
-		$("#title_smoke").text(username);
+		$("#title_smoke").text($.cookie('username');
 };
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
@@ -90,6 +90,8 @@ var go_stats_smoke = function() {
 //Quand on clique sur le bouton go_smoke->home
 var go_smoke_home = function() {
 		username='';
+	//Reset des cookies 
+		$.cookie('username', null);
 		$(".disconnected").show();
 		$(".connected").hide();
 };

@@ -3,8 +3,14 @@
 
 //Var connection
 var Connect =function() {
-	//On prend la variable username dans l'input "Connect"
+	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
+	if ($deja_connect) {
+	username=$.cookie('username');
+	}
+	else
+	{
 	username=$('#username_connect').val();
+	}
 	//on fait la requete GET correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
@@ -71,6 +77,7 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
+
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({
@@ -84,12 +91,13 @@ var Smoke = function() {
  				"user[name]":username,
 				"smoke[smoke_latitude]":1,
 				"smoke[smoke_longitude]":2,
-				"smoke[smoke_date]":new Date()}
+				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
 			Smoke_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
 			Smoke_failure(textStatus,errorThrown);
 		}
-	});	
+	});			
+
 };
