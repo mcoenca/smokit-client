@@ -41,7 +41,7 @@ alert('apresonerror');
 
 */
 
-if($.cookie('username') && $.cookie('username')!='null'){
+if($.cookie('username')!=undefined && $.cookie('username')!='null'){
 //Si on est déja connecté, on triche (haha) et on se connecte automatiquement avec deja_connect=true
 Connect(true);	
 }

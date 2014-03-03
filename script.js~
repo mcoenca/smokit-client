@@ -54,7 +54,7 @@ $(".disconnected").show();
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-		Connect();
+		Connect(false);
 	});
 	//bouton animé en bleu
 	$('#connect').mousedown(function() {

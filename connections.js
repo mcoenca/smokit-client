@@ -5,10 +5,12 @@
 var Connect =function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
 	if ($deja_connect) {
+	alert('blop');
 	username=$.cookie('username');
 	}
 	else
 	{
+	alert('lis la ligne de texte');
 	username=$('#username_connect').val();
 	}
 	//on fait la requete GET correspondante

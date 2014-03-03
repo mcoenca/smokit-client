@@ -73,8 +73,8 @@ var Stats_success = function($donnees) {
 
 var Stats_failure = function($textStatus, $errorThrown) {
 	//Ca a raté, message d'erreur
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert('impossible de récupérer les stats...');
 };
 
@@ -84,7 +84,7 @@ var Stats_failure = function($textStatus, $errorThrown) {
 var go_stats_smoke = function() {
 		$(".connected").show();
 		$(".stats").hide();
-		$("#title_stats").text("Tes stats, "+username+" !");
+		$("#title_stats").text("Tes stats, "+$.cookie('username')+" !");
 };
 
 //Quand on clique sur le bouton go_smoke->home
