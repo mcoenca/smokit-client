@@ -1,10 +1,12 @@
-$(function() {
-
+$(function($donnees) {
+	
+		var i=0;
 		var liste = new Array();
 
-		for (var i = 0; i < $donnees['smokes'][smoke_date].length; i++){
-			liste[i] = $donnees['smokes'][smoke_date][i];
-		}
+		$.each($donnees['smokes'],function(){
+				liste[i]=this.smoke_date;
+				i=i+1;
+		});
 
 		for (var i = 0; i < liste.length; i++){
 			liste[i] = liste[i].setUTCMilliseconds(0);
