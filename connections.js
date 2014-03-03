@@ -2,7 +2,7 @@
 
 
 //Var connection
-var Connect =function() {
+var Connect =function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
 	if ($deja_connect) {
 	username=$.cookie('username');
