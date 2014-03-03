@@ -4,40 +4,24 @@ var username='';
 //Execute après le chargement du DOM
 var ready = function(){
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-// Cordova is ready
-//
-function onDeviceReady() {
-alert('onDeviceReady');
-var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-}
-
-// onSuccess Geolocation
-//
-
-var onSuccess = function($position) {
-alert('success');
+var geo_options = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
 };
 
-var onError=function($error) {
+navigator.geolocation.getCurrentPosition(function(position) {
+	alert(position.coords.latitude, position.coords.longitude);
+}, 
+function(error){
 alert('error');
-};
+},geo_options);
 
-alert('test1');
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-alert('test2');
-geolocation.getCurrentPosition(onSuccess, onError);
 
-// onError Callback receives a PositionError object
-//
-alert('avantonerror');
-onSuccess('prout');
-alert('apresonerror');
+
 //Accueil
 $(".disconnected").show();
-alert('test3');
+
 //Réglage de ce qu'on accepte comme input grace au plugin jquery alphanum(). Evite création d'utilisateurs aux noms mauvais pour les requetes. A COMPLETER DANS LE BACKEND
 	$(".restricted_input").alphanum();
 
