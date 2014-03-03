@@ -26,10 +26,23 @@ body {
     background-image:url('assets/fond_app.jpg');
   }
 
+  #cigarette {
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left:-5px;
+  }
+
+  #cigarette img {
+    position: absolute;
+    width: 150px;
+    left:-3px;
+  }
+
   #connect { 
     position: relative;
-    top: 2px;
-    left: -3px;
+    top: 3px;
+    left: -6px;
   }
 
   #username_connect { 
@@ -45,9 +58,9 @@ body {
   }
 
   #create { 
-    position: relative;
-    top: 2px;
-    left: -3px;
+    positon: relative;
+    top: 3px;
+    left: -6px;
   }
 
   h1 {

@@ -1,62 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hold it !</title>
-<script src="jquery.js"></script>
-<script src="jquery.alphanum.js"></script>
-<script src="script.js"></script>
-<script src="transitions.js"></script>
-<script src="connections.js"></script>
-<script scr="cordova.js"></script>
-<link rel="stylesheet" type="text/css" href="home.css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<head>
+  		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Hold it !</title>
+		<link rel="stylesheet" type="text/css" href="home.css">
+	</head>
 
-  </head>
-  <body>
+	<body>
 
-<!--Partie de code qui sera utilisée en non connecté-->
-<div class='disconnected'>
-<p id="error1" style="display:none; color:red">Username non existant!</p>	
-<p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
-	<h1>Hold it !</h1>
-	<h2 id="title">Username :</h2>
+		<!--Partie de code qui sera utilisée en non connecté-->
+		<div class='disconnected'>
+		<p id="error1" style="display:none; color:red">Username non existant!</p>	
+		<p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
+			<h1>Hold it !</h1>
+			<form>
+				<h2 id="title">Username :</h2>
+					<input id="username_connect" type="text" style="text-align: right">
+				   	<img id="connect" src="assets/orange_ok_white.jpg" style="height:19px">
+				<br/><br/>
 
-		<input id="username_connect" type="text">
-	   	<img id="connect" src="assets/orange_ok.jpg" style="height:19px">
-	<br/><br/>
+				<p> Not registered yet ? </p>
+				<h2>New User :</h2>
+					<input id="username_create" type="text" style="text-align: right">
+					<img id="create" src="assets/orange_ok_white.jpg" style="height:19px">
+			</form>
 
-	<p> Not registered yet ? </p>
-	<h2>New User :</h2>
-		<input id="username_create" type="text">
-		<img id="create" src="assets/orange_ok.jpg" style="height:19px">
+			<address>Made March 2014<br>
+			powered by 'Connectés 4ever'</address>
 
-	<address>Made March 2014<br>
-	powered by 'Connectés 4ever'</address>
+		</div>
 
-</div>
+		<!--Partie de code qui sera utilisée en connecté-->
+		<div class='connected' style="display:none">
+			<h2 id="title_smoke"></h2> 
+		<!--Beaucoup d'animations Jquery à faire la-->
+			<div id="cigarette">
+				<img id="smoke3" src="assets/clope_cramee.png">
+				<img id="smoke2" src="assets/clope_allumee.png">
+				<img id="smoke1" src="assets/clope_eteinte.png">
+			</div>
+			<br/>
+			<footer>
+				<img src="assets/icon_smoke_blue.png" style="height:50px">
+				<img id="go_smoke_stats" src="assets/icon_stats_white.png" style="height:50px">
+				<img id="go_smoke_home" src="assets/icon_logout_white.png" style="height:50px">
+			</footer>
+			<!--logo à placer
+			<img src="assets/logo_Hit.png" style="height:50px">
+			-->
+		</div>
 
-<!--Partie de code qui sera utilisée en connecté-->
-<div class='connected' style="display:none">
-	<h2 id="title_smoke"></h2>
-<!--Beaucoup d'animations Jquery à faire la-->
-	<img id="smoke" src="assets/clope_allumee.png">
-	<br/>
-	<img id="go_smoke_stats" src="assets/icon_stats_white.png" style="height:40px">
-	<img id="go_smoke_home" src="assets/icon_logout.png" style="height:40px">
-</div>
+		<!--Partie de code qui sera utilisé en stats-->
+		<div class='stats' style="display:none">
+			<h2 id="title_stats"></h2>
+			<table id="stat_table">
+				<tr id="title_tr">
+					<th>Date</th>
+					<th>Latitude</th>
+					<th>Longitude</th>
+				</tr>
+			</table>
+			<footer>
+				<img id="go_stats_smoke" src="assets/icon_smoke_white.png" style="height:50px">
+				<img src="assets/icon_stats_blue.png" style="height:50px">
+				<img id="go_stats_home" src="assets/icon_logout_white.png" style="height:50px">
+			</footer>
+			<!--logo à placer
+			<img src="assets/logo_Hit.png" style="height:50px">
+			-->
+		</div>
 
-<!--Partie de code qui sera utilisé en stats-->
-<div class='stats' style="display:none">
-	<h2 id="title_stats"></h2>
-	<table id="stat_table">
-		<tr id="title_tr">
-			<th>Date</th>
-			<th>Latitude</th>
-			<th>Longitude</th>
-		</tr>
-	</table>
-<input id="go_stats_smoke" type="submit" value="Retour cigarettes">
-</div>
-
-</body>
+		<script src="jquery.js"></script>
+		<script src="jquery.alphanum.js"></script>
+		<script src="script.js"></script>
+		<script src="transitions.js"></script>
+		<script src="connections.js"></script>
+		<script scr="cordova.js"></script>
+	</body>
 </html>

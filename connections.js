@@ -71,6 +71,7 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
+
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({
@@ -91,5 +92,6 @@ var Smoke = function() {
 		error: function(xhr,textStatus,errorThrown){
 			Smoke_failure(textStatus,errorThrown);
 		}
-	});	
+	});			
+
 };

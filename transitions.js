@@ -5,7 +5,7 @@ var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 		$(".connected").show();
 		$(".disconnected").hide();
-		$("#title_smoke").text("Smok'it, "+username+" !");
+		$("#title_smoke").text(username);
 };
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
@@ -24,7 +24,31 @@ var Connection_failure = function($textStatus,$errorThrown,$creation) {
 //Création ou error de smoke
 var Smoke_success = function($donnees) {
 	//Création de smoke réussie, petite animation
-	alert('Smoke créée... !');
+	//alert('Smoke créée... !');
+
+	$('#smoke1').fadeOut( 100, function() {
+    	//alert( "Animation1 complete." );
+    	$('#smoke1').prop('disabled', true);
+    	$('#smoke2').fadeOut( 5000, function() {
+    		//alert( "Animation2 complete." );
+
+    		$('#smoke1').delay(10000).show( 0, function() {
+    			//alert( "Animation3 complete." );
+    			$('#smoke1').prop('disabled', false);
+    			$('#smoke2').show( 0, function() {
+    				//alert( "Animation4 complete." );
+    			});
+    		});
+    	});	
+    });
+
+
+	//$(['src:"assets/clope_allumee.png"']).fadeIn("slow");
+	//$(['src:"assets/clope_cramee.png"']).fadeIn("slow");
+	//$(['src:"assets/clope_eteinte.png"']).show();
+	//$(['src:"assets/clope_allumee.png"']).hide();
+	//$(['src:"assets/clope_cramee.png"']).hide();
+
 };
 
 var Smoke_failure = function($textStatus, $errorThrown) {
@@ -69,3 +93,12 @@ var go_smoke_home = function() {
 		$(".disconnected").show();
 		$(".connected").hide();
 };
+
+//Quand on clique sur le bouton go_stats->home
+var go_stats_home = function() {
+		username='';
+		$(".disconnected").show();
+		$(".stats").hide();
+};
+
+
