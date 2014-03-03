@@ -63,12 +63,15 @@ var Stats_success = function($donnees) {
 	var l = $donnees['smokes'].length;
 	console.log(l);
 	//Parcours à refaire pour une meilleure présentation
-		$.each($donnees['smokes'],function(){
+		
+
+		/*$.each($donnees['smokes'],function(){
 			$("#stat_table").append("<tr class='smoke_list'><th>"+this.smoke_date+
 			"</th><th>"+this.smoke_latitude+
 			"</th><th>"+this.smoke_longitude+
 			"</th></tr>")
-		});
+		}); 
+		*/
 };
 
 var Stats_failure = function($textStatus, $errorThrown) {
