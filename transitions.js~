@@ -90,6 +90,8 @@ var go_stats_smoke = function() {
 //Quand on clique sur le bouton go_smoke->home
 var go_smoke_home = function() {
 		username='';
+	//Reset des cookies 
+		$.cookie('username', null);
 		$(".disconnected").show();
 		$(".connected").hide();
 };
