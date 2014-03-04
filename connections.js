@@ -2,7 +2,7 @@
 
 
 //Var connection
-var Connect =function($deja_connect) {
+var Connect=function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
 	/*if ($deja_connect) {
 	username=$.cookie('username');
@@ -10,7 +10,8 @@ var Connect =function($deja_connect) {
 	else
 	{*/
 	username=$('#username_connect').val();
-	
+	alert('on est dans la fonction');
+	alert(username);
 	//on fait la requete GET correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
@@ -20,9 +21,11 @@ var Connect =function($deja_connect) {
         			Accept : "application/json"
    				 },
 		success: function(donnees){
+			alert('connection réussie');
 			Connection_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
+			alert('erreur de connection');
 			Connection_failure(textStatus,errorThrown,false);
 		}
 	});
