@@ -4,11 +4,11 @@
 //Var connection
 var Connect =function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
-	if ($deja_connect) {
+	/*if ($deja_connect) {
 	username=$.cookie('username');
 	}
 	else
-	{
+	{*/
 	username=$('#username_connect').val();
 	}
 	//on fait la requete GET correspondante
@@ -56,10 +56,10 @@ var Stats = function() {
 	$(".smoke_list").remove();
 	$(".connected").hide();
 	$(".stats").show();
-	$("#title_stats").text("Tes stats, "+$.cookie('username')+" !");
+	$("#title_stats").text("Tes stats, "+username+" !");
 	//requete ajax pour  remplir le tableau joli !
 	$.ajax({
-		url: "http://holdit.herokuapp.com/users/name/"+$.cookie('username')+".json",
+		url: "http://holdit.herokuapp.com/users/name/"+username+".json",
 		dataType: "json",
 		headers: { 
         		Accept : "application/json"
