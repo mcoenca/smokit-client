@@ -48,7 +48,15 @@ alert('apresonerror');
 //else {
 //Accueil
 
-$(".disconnected").show();
+if (localStorage.getItem('username')==null) {
+	$(".disconnected").show();	
+}
+else {
+	username=localStorage.getItem('username');
+	Connect(true);
+}
+
+
 //}
 //Réglage de ce qu'on accepte comme input grace au plugin jquery alphanum(). Evite création d'utilisateurs aux noms mauvais pour les requetes. A COMPLETER DANS LE BACKEND
 	$(".restricted_input").alphanum();
