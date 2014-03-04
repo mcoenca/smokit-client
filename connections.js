@@ -10,7 +10,7 @@ var Connect =function($deja_connect) {
 	else
 	{*/
 	username=$('#username_connect').val();
-	}
+	
 	//on fait la requete GET correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
