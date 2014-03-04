@@ -1,7 +1,10 @@
-$(function($donnees) {
+/* $(function($donnees) {
 	
 		var i=0;
 		var liste = new Array();
+
+		var l = $donnees['smokes'].length;
+		console.log(l);
 
 		$.each($donnees['smokes'],function(){
 				liste[i]=this.smoke_date;
@@ -21,6 +24,7 @@ $(function($donnees) {
 
 		var L = 0; //à modifier: garder le dernier L en mémoire ?
 		var T = 1; //à modifier: garder le dernier T en mémoire ?
+
 		var compteur=0;
 
 		if (liste[0]!=0) { //première clope
@@ -151,4 +155,6 @@ $(function($donnees) {
 			plot.setSelection(ranges);
 		});
 
-	});
+});
+
+*/
