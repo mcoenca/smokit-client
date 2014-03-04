@@ -91,7 +91,7 @@ var Smoke = function() {
         			Accept : "application/json"
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
- 				"user[name]":$.cookie('username'),
+ 				"user[name]":username,
 				"smoke[smoke_latitude]":1,
 				"smoke[smoke_longitude]":2,
 				"smoke[smoke_date]":new Date()},
