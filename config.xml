@@ -17,8 +17,8 @@
     </author>
 <!--    <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geobroker" />
-    </feature>
+    </feature> -->
 
-<!-- <gap:plugin name="org.apache.cordova.geolocation" /> --!>
+<!-- <gap:plugin name="org.apache.cordova.geolocation" -->
 
 </widget>
