@@ -15,10 +15,10 @@
     <author email="m.coenca@gmail.com">
         John Connecté 
     </author>
-<!--    <feature name="Geolocation">
+ <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geobroker" />
-    </feature> -->
+    </feature> 
 
-<!-- <gap:plugin name="org.apache.cordova.geolocation" -->
+ <gap:plugin name="org.apache.cordova.geolocation.Geobroker" />
 
 </widget>
