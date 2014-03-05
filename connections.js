@@ -32,7 +32,6 @@ var Connect=function($deja_connect) {
 var Create = function() {
 	//On prend la variable username dans l'input de texte "Nouvel util"
 	username=$('#username_create').val();
-	localStorage.setItem('username',username);
 	//on fait la requete POST correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users",
@@ -43,6 +42,7 @@ var Create = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=", "user[name]":username},
 		success: function(donnees){
+		localStorage.setItem('username',username);
 			Connection_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){

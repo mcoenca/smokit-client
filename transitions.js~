@@ -5,14 +5,18 @@ var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 		//alert('connection reussie');
 		$(".connected").show();
-		$(".disconnected").hide();
 		$("#title_smoke").text(username);
+		
+		//cache et remise à zéro de la page d'accueil
+		$(".disconnected").hide();
+		$('#error1').hide();
+		$('#error2').hide();
 };
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
 	console.log($textStatus);
 	console.log($errorThrown);
-	alert('Bug connection !');
+	//alert('Bug connection !');
 	if ($creation) {
 		$('#error2').show();
 		$('#username_create').css("border-color","red");

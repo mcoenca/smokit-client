@@ -8,7 +8,8 @@ var ready = function(){
 
 //Si on est déja connecté, on triche (haha) et on se connecte automatiquement avec deja_connect=true
 
-if (localStorage.getItem('username')!=null) {	
+if (localStorage.getItem('username')!=null) {
+		
 	username=localStorage.getItem('username');
 	Connect(true);
 }

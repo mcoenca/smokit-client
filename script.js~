@@ -13,7 +13,7 @@ if (localStorage.getItem('username')!=null) {
 	Connect(true);
 }
 else {
-	$(".disconnected").show();
+	
 }
 
 
