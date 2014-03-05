@@ -1,59 +1,20 @@
-//Attend le chargement du DOM que ce soit en Ruby (page load)
+//Attend le chargement du DOM que ce soit en Ruby (page load) ou normal
+//Définition de la variable importante, username
 var username='';
 
 //Execute après le chargement du DOM
 var ready = function(){
 
-//document.addEventListener("deviceready", onDeviceReady, false);
 
-// Cordova is ready
-//
-//function onDeviceReady() {
-//alert('onDeviceReady');
-//var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
-//navigator.geolocation.getCurrentPosition(onSuccess, onError);
-//}
-
-// onSuccess Geolocation
-//
-
-/*var onSuccess = function($position) {
-alert('success');
->>>>>>> 536d7aa5816728f6f5efa314205a3726a67b0b34
-};
-
-navigator.geolocation.getCurrentPosition(function(position) {
-	alert(position.coords.latitude, position.coords.longitude);
-});
-
-
-
-<<<<<<< HEAD
-//Accueil
-$(".disconnected").show();
-
-=======
-// onError Callback receives a PositionError object
-//
-alert('avantonerror');
-onSuccess('prout');
-alert('apresonerror');
-
-*/
-
-//if($.cookie('username') && $.cookie('username')!='null'){
 //Si on est déja connecté, on triche (haha) et on se connecte automatiquement avec deja_connect=true
-//Connect(true);	
-//}
-//else {
-//Accueil
 
-if (localStorage.getItem('username')==null) {
-	$(".disconnected").show();	
-}
-else {
+if (localStorage.getItem('username')!=null) {
+		
 	username=localStorage.getItem('username');
 	Connect(true);
+}
+else {
+	$(".disconnected").show();
 }
 
 
@@ -63,8 +24,6 @@ else {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-		alert('je clique sur le bouton');
-	
 		Connect(false);
 	});
 	//bouton animé en bleu

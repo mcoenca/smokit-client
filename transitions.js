@@ -3,16 +3,20 @@
 ////////////////////////////////////////////////////////Connection et création
 var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
-		alert('connection reussie');
+		//alert('connection reussie');
 		$(".connected").show();
-		$(".disconnected").hide();
 		$("#title_smoke").text(username);
+		
+		//cache et remise à zéro de la page d'accueil
+		$(".disconnected").hide();
+		$('#error1').hide();
+		$('#error2').hide();
 };
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
 	console.log($textStatus);
 	console.log($errorThrown);
-	alert('Bug connection');
+	//alert('Bug connection !');
 	if ($creation) {
 		$('#error2').show();
 		$('#username_create').css("border-color","red");
@@ -37,7 +41,7 @@ var Smoke_success = function($donnees) {
     		$('#smoke1').delay(10000).show( 0, function() {
     			//alert( "Animation3 complete." );
     			$('#smoke1').prop('disabled', false);
-    			$('#smoke2').show( 0, function() {
+    				$('#smoke2').show( 0, function() {
     				//alert( "Animation4 complete." );
     			});
     		});
@@ -48,9 +52,10 @@ var Smoke_success = function($donnees) {
 
 var Smoke_failure = function($textStatus, $errorThrown) {
 	//Création de smoke ratée, message d'erreur !
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert("La connexion au server n'a pas réussi, réessaie !");
+
 };
 
 var Stats_success = function($donnees) {
@@ -214,8 +219,8 @@ var l = $donnees['smokes'].length;
 
 var Stats_failure = function($textStatus, $errorThrown) {
 	//Ca a raté, message d'erreur
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert('impossible de récupérer les stats...');
 };
 
@@ -232,7 +237,7 @@ var go_stats_smoke = function() {
 var go_smoke_home = function() {
 		username='';
 	//Reset des cookies 
-		$.cookie('username', null);
+		localStorage.removeItem('username');
 		$(".disconnected").show();
 		$(".connected").hide();
 };
@@ -240,6 +245,7 @@ var go_smoke_home = function() {
 //Quand on clique sur le bouton go_stats->home
 var go_stats_home = function() {
 		username='';
+		localStorage.removeItem('username');
 		$(".disconnected").show();
 		$(".stats").hide();
 };

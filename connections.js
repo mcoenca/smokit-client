@@ -3,15 +3,12 @@
 
 //Var connection
 var Connect=function($deja_connect) {
-	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
-	/*if ($deja_connect) {
-	username=$.cookie('username');
+	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
+	if($deja_connect==false){
+		username=$('#username_connect').val();
+		localStorage.setItem('username',username);
 	}
-	else
-	{*/
-	username=$('#username_connect').val();
-	alert('on est dans la fonction');
-	alert(username);
+
 	//on fait la requete GET correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
@@ -21,11 +18,11 @@ var Connect=function($deja_connect) {
         			Accept : "application/json"
    				 },
 		success: function(donnees){
-			alert('connection réussie');
+			//alert('connection réussie');
 			Connection_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
-			alert('erreur de connection');
+			//alert('erreur de connection');
 			Connection_failure(textStatus,errorThrown,false);
 		}
 	});
@@ -45,6 +42,7 @@ var Create = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=", "user[name]":username},
 		success: function(donnees){
+		localStorage.setItem('username',username);
 			Connection_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
