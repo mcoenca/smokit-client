@@ -16,5 +16,5 @@
         Hardeep Shoker 
     </author>
 
-<gap:plugin name="org.apache.cordova.geolocation" />
+<!--<gap:plugin name="org.apache.cordova.geolocation" /> -->
 </widget>
