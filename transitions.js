@@ -85,7 +85,7 @@ var l = $donnees['smokes'].length;
 
 	for (j=0;j<2;j++) {
 		for (i=0;i<7;i++) {
-			d[i][0]=today-1000*60*60*24*(7-i);
+			d[i][0]=today-1000*60*60*24*(6-i);
 			d[i][1]=0;
 		}
 	}
@@ -97,12 +97,14 @@ var l = $donnees['smokes'].length;
 	if (liste[0]!=0) { //première clope
 		while ( T-1 < liste.length ) {       // Compte le nombre de nouvelles clopes/jour
 				
-			if ( (liste[T-1] > today-1000*60*60*24*8) ) {
+			if ( (liste[T-1] > today-1000*60*60*24*7) ) {
 
 				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
 					compteur=compteur+1;
 				}
-				
+				while ( L < 6 && d[L][0] != liste[T-1] ) {
+					L=L+1;
+				}
 				d[L][1]=d[L][1] + compteur;
 				L=L+1;
 				T=T+compteur;
