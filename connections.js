@@ -2,17 +2,12 @@
 
 
 //Var connection
-var Connect =function($deja_connect) {
+var Connect=function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté
-	if ($deja_connect) {
-	alert('blop');
-	username=$.cookie('username');
-	}
-	else
-	{
-	alert('lis la ligne de texte');
+
 	username=$('#username_connect').val();
-	}
+	alert('on est dans la fonction');
+	alert(username);
 	//on fait la requete GET correspondante
 	$.ajax({
 			url: "http://holdit.herokuapp.com/users/name/"+username+".json",
@@ -22,9 +17,11 @@ var Connect =function($deja_connect) {
         			Accept : "application/json"
    				 },
 		success: function(donnees){
+			alert('connection réussie');
 			Connection_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
+			alert('erreur de connection');
 			Connection_failure(textStatus,errorThrown,false);
 		}
 	});
@@ -58,10 +55,10 @@ var Stats = function() {
 	$(".smoke_list").remove();
 	$(".connected").hide();
 	$(".stats").show();
-	$("#title_stats").text("Tes stats, "+$.cookie('username')+" !");
+	$("#title_stats").text("Tes stats, "+username+" !");
 	//requete ajax pour  remplir le tableau joli !
 	$.ajax({
-		url: "http://holdit.herokuapp.com/users/name/"+$.cookie('username')+".json",
+		url: "http://holdit.herokuapp.com/users/name/"+username+".json",
 		dataType: "json",
 		headers: { 
         		Accept : "application/json"
@@ -90,7 +87,7 @@ var Smoke = function() {
         			Accept : "application/json"
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
- 				"user[name]":$.cookie('username'),
+ 				"user[name]":username,
 				"smoke[smoke_latitude]":1,
 				"smoke[smoke_longitude]":2,
 				"smoke[smoke_date]":new Date()},

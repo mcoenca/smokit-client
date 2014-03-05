@@ -53,13 +53,32 @@
 		<!--Partie de code qui sera utilisé en stats-->
 		<div class='stats' style="display:none">
 			<h2 id="title_stats"></h2>
-			<table id="stat_table">
+
+			<!--<table id="stat_table">
 				<tr id="title_tr">
 					<th>Date</th>
 					<th>Latitude</th>
 					<th>Longitude</th>
 				</tr>
 			</table>
+			-->
+
+			<div id="content">
+
+				<div class="demo-container">
+					<div id="placeholder" class="demo-placeholder"></div>
+				</div>
+
+				<div class="demo-container" style="height:150px;">
+					<div id="overview" class="demo-placeholder"></div>
+				</div>
+
+				<p>This plot shows smokes per day, with weekends colored.</p>
+
+				<p>The smaller plot acts as an overview. You can drag a selection on either plot to affect the other.</p>
+
+			</div>
+			
 			<footer>
 				<img id="go_stats_smoke" src="assets/icon_smoke_white.png" style="height:50px">
 				<img src="assets/icon_stats_blue.png" style="height:50px">
@@ -72,7 +91,12 @@
 
 		<script src="jquery.js"></script>
 		<script src="jquery.alphanum.js"></script>
+		<script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
+		<script language="javascript" type="text/javascript" src="jquery.flot.time.js"></script>
+		<script language="javascript" type="text/javascript" src="jquery.flot.selection.js"></script>
 		<script src="script.js"></script>
+		<script src="date.js"></script>
+		<!--<script src="graph.js"></script>-->
 		<script src="jquery.cookie.js"></script>
 		<script src="transitions.js"></script>
 		<script src="connections.js"></script>
