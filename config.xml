@@ -16,9 +16,9 @@
         John Connecté 
     </author>
  <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.Geobroker" />
+        <param name="android-package" value="org.apache.cordova.geolocatio" />
     </feature> 
 
- <gap:plugin name="org.apache.cordova.geolocation.Geobroker" />
+ <gap:plugin name="org.apache.cordova.geolocation" />
 
 </widget>
