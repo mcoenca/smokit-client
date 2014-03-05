@@ -35,7 +35,7 @@ var Smoke_success = function($donnees) {
     		$('#smoke1').delay(10000).show( 0, function() {
     			//alert( "Animation3 complete." );
     			$('#smoke1').prop('disabled', false);
-    			$('#smoke2').show( 0, function() {
+    				$('#smoke2').show( 0, function() {
     				//alert( "Animation4 complete." );
     			});
     		});
@@ -53,9 +53,10 @@ var Smoke_success = function($donnees) {
 
 var Smoke_failure = function($textStatus, $errorThrown) {
 	//Création de smoke ratée, message d'erreur !
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert("La connexion au server n'a pas réussi, réessaie !");
+
 };
 
 var Stats_success = function($donnees) {

@@ -35,7 +35,7 @@ var Smoke_success = function($donnees) {
     		$('#smoke1').delay(10000).show( 0, function() {
     			//alert( "Animation3 complete." );
     			$('#smoke1').prop('disabled', false);
-    			$('#smoke2').show( 0, function() {
+    				$('#smoke2').show( 0, function() {
     				//alert( "Animation4 complete." );
     			});
     		});
@@ -53,9 +53,25 @@ var Smoke_success = function($donnees) {
 
 var Smoke_failure = function($textStatus, $errorThrown) {
 	//Création de smoke ratée, message d'erreur !
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert("La connexion au server n'a pas réussi, réessaie !");
+	$('#smoke1').fadeOut( 100, function() {
+    	//alert( "Animation1 complete." );
+    	$('#smoke1').prop('disabled', true);
+    	$('#smoke2').fadeOut( 5000, function() {
+    		//alert( "Animation2 complete." );
+
+    		$('#smoke1').delay(10000).show( 0, function() {
+    			//alert( "Animation3 complete." );
+    			$('#smoke1').prop('disabled', false);
+    				$('#smoke2').show( 0, function() {
+    				//alert( "Animation4 complete." );
+    			});
+    		});
+    	});	
+    });
+
 };
 
 var Stats_success = function($donnees) {
@@ -73,8 +89,8 @@ var Stats_success = function($donnees) {
 
 var Stats_failure = function($textStatus, $errorThrown) {
 	//Ca a raté, message d'erreur
-	console.log(textStatus);
-	console.log(errorThrown);
+	console.log($textStatus);
+	console.log($errorThrown);
 	alert('impossible de récupérer les stats...');
 };
 
@@ -84,7 +100,7 @@ var Stats_failure = function($textStatus, $errorThrown) {
 var go_stats_smoke = function() {
 		$(".connected").show();
 		$(".stats").hide();
-		$("#title_stats").text("Tes stats, "+username+" !");
+		$("#title_stats").text("Tes stats, "+$.cookie('username')+" !");
 };
 
 //Quand on clique sur le bouton go_smoke->home
