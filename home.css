@@ -64,9 +64,9 @@ body {
   }
 
   #content {
-  width: 300px;
-  margin: 2px;
-  padding: 5px;
+    width: 300px;
+    margin: 2px;
+    padding: 5px;
   }
 
   .demo-container {
@@ -76,7 +76,7 @@ body {
   padding: 20px 1px 15px 1px;
   margin: 10px auto 3px auto;
   border: 1px solid #ddd;
-  background: #fff;
+  background: null;
   background: linear-gradient(#f6f6f6 0, #fff 50px);
   background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
   background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
