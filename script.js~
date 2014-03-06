@@ -21,10 +21,10 @@ var onSuccess = function(position) {
 
 // onError Callback receives a PositionError object
 //
-function onError(error) {
+var onError = function(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
-}
+};
 
 
 
@@ -44,6 +44,7 @@ else {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		Connect(false);
 	});
 	//bouton animé en bleu

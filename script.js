@@ -28,14 +28,14 @@ var onError = function(error) {
 
 
 
-if (localStorage.getItem('username')!=null) {
+/*if (localStorage.getItem('username')!=null) {
 		
 	username=localStorage.getItem('username');
 	Connect(true);
 }
-else {
+else { */
 	$(".disconnected").show();
-}
+//}
 
 
 //}
@@ -44,7 +44,7 @@ else {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		Connect(false);
 	});
 	//bouton animé en bleu
