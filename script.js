@@ -45,6 +45,7 @@ var onError = function(error) {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
+	alert('je clique sur le bouton');
 		Connect(false);
 	});
 	//bouton animé en bleu

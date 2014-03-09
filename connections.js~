@@ -93,8 +93,8 @@ var Smoke = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
-				"smoke[smoke_latitude]":1,
-				"smoke[smoke_longitude]":2,
+				"smoke[smoke_latitude]":lat,
+				"smoke[smoke_longitude]":long,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
 			Smoke_success(donnees);

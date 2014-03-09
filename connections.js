@@ -4,7 +4,7 @@
 //Var connection
 var Connect=function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
-
+	alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
 	}

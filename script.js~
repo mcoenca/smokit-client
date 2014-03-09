@@ -45,7 +45,6 @@ var onError = function(error) {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		Connect(false);
 	});
 	//bouton animé en bleu
