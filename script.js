@@ -99,8 +99,9 @@ else {
 	});
 
 //Quand on clique sur le bouton go_smoke -> stats
-	$('#go_smoke_stats').click(function() {
+	$('#go_smoke_stats').click(function() {			
 		Stats();
+		$("#tooltip").hide();
 	});
 	//bouton animé en bleu
 	$('#go_smoke_stats').mousedown(function() {
@@ -112,11 +113,13 @@ else {
 
 //Quand on clique sur le bouton go_stats->smoke
 	$('#go_stats_smoke').click(function(){
+		$("#tooltip").hide();
 		go_stats_smoke();
 	});
 	//bouton animé en bleu
 	$('#go_stats_smoke').mousedown(function() {
 	this.src="assets/icon_smoke_blue.png";
+	$("#tooltip").hide();
 	});
 	$('#go_stats_smoke').mouseup(function() {
 	this.src="assets/icon_smoke_white.png";
@@ -135,6 +138,7 @@ else {
 	});
 //Quand on clique sur le bouton go_stats->home
 	$('#go_stats_home').click(function() {
+		$("#tooltip").hide();
 		go_stats_home();
 	});
 	//bouton animé en bleu

@@ -31,10 +31,10 @@ var Smoke_success = function($donnees) {
 	$('#smoke1').fadeOut( 100, function() {
     	//alert( "Animation1 complete." );
     	$('#smoke1').prop('disabled', true);
-    	$('#smoke2').fadeOut( 5000, function() {
+    	$('#smoke2').fadeOut( 4000, function() {
     		//alert( "Animation2 complete." );
 
-    		$('#smoke1').delay(10000).show( 0, function() {
+    		$('#smoke1').delay(5000).show( 0, function() {
     			//alert( "Animation3 complete." );
     			$('#smoke1').prop('disabled', false);
     			$('#smoke2').show( 0, function() {
@@ -85,14 +85,43 @@ var l = $donnees['smokes'].length;
 		}
 	}
 
-	var L = 0; //à modifier: garder le dernier L en mémoire ?
-	var T = 1; //à modifier: garder le dernier T en mémoire ?
+	var d1 = new Array(); //Tableau Nbre de clopes Par Jour
+	for (i=0;i<7;i++) {
+		d1[i]=new Array();
+			for (j=0;j<2;j++) {
+				d1[i][j]=0;
+		}
+	}
+
+	for (j=0;j<2;j++) {
+		for (i=0;i<7;i++) {
+			d1[i][0]=today-1000*60*60*24*(13-i);
+			d1[i][1]=0;
+		}
+	}
+
+	var L = 0; //parcourt d
+	var L1 = 0; // parcourt d1
+	var T = 1; //parcourt liste // à modifier: garder le dernier T en mémoire ?
 	var compteur=0;
 
 	if (liste[0]!=0) { //première clope
 		while ( T-1 < liste.length ) {       // Compte le nombre de nouvelles clopes/jour
 				
-			if ( (liste[T-1] > today-1000*60*60*24*7) ) {
+			if ( (liste[T-1] > today-1000*60*60*24*14) && (liste[T-1] < today-1000*60*60*24*7) ) {
+
+				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
+					compteur=compteur+1;
+				}
+				while ( L < 6 && d1[L1][0] != liste[T-1] ) {
+					L1=L1+1;
+				}
+				d1[L1][1]=d1[L1][1] + compteur;
+				L1=L1+1;
+				T=T+compteur;
+				compteur=0;
+			}
+			else if ( (liste[T-1] > today-1000*60*60*24*7) ) {
 
 				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
 					compteur=compteur+1;
@@ -104,7 +133,7 @@ var l = $donnees['smokes'].length;
 				L=L+1;
 				T=T+compteur;
 				compteur=0;
-			}
+			} 
 			T=T+1;
 		}
 	}

@@ -19,11 +19,17 @@
     src: url('assets/UpperEastSide.ttf');
 }
 
+
+
 body {
   	padding-left: 0em;
   	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
     background-image:url('assets/fond_app.jpg');
+  }
+
+  .logo {
+  height:80px
   }
 
   #cigarette {
