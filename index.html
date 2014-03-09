@@ -7,12 +7,13 @@
 	</head>
 
 	<body>
+		<img src="assets/logo_holdit.png" class="logo">
 
 		<!--Partie de code qui sera utilisée en non connecté-->
 		<div class='disconnected' style="display:none">
 		<p id="error1" style="display:none; color:red">Username non existant!</p>	
 		<p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
-			<h1>Hold it !</h1>
+
 			<form>
 				<h2 id="title">Username :</h2>
 					<input id="username_connect" type="text" style="text-align: right">
@@ -32,13 +33,13 @@
 
 		<!--Partie de code qui sera utilisée en connecté-->
 		<div class='connected' style="display:none">
-			<h2 id="title_smoke"></h2> 
 		<!--Beaucoup d'animations Jquery à faire la-->
 			<div id="cigarette">
 				<img id="smoke3" src="assets/clope_cramee.png">
 				<img id="smoke2" src="assets/clope_allumee.png">
 				<img id="smoke1" src="assets/clope_eteinte.png">
 			</div>
+			<h2 id="title_smoke"></h2> 
 			<br/>
 			<footer>
 				<img src="assets/icon_smoke_blue.png" style="height:50px">
@@ -62,20 +63,19 @@
 				</tr>
 			</table>
 			-->
-
 			<div id="content">
 
 				<div class="demo-container">
 					<div id="placeholder" class="demo-placeholder"></div>
+
 				</div>
 
-				<div class="demo-container" style="height:150px;">
+				<!--<div class="demo-container" style="height:150px;">
 					<div id="overview" class="demo-placeholder"></div>
 				</div>
+				-->
 
 				<p>This plot shows smokes per day, with weekends colored.</p>
-
-				<p>The smaller plot acts as an overview. You can drag a selection on either plot to affect the other.</p>
 
 			</div>
 			

@@ -19,11 +19,17 @@
     src: url('assets/UpperEastSide.ttf');
 }
 
+
+
 body {
   	padding-left: 0em;
   	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
     background-image:url('assets/fond_app.jpg');
+  }
+
+  .logo {
+  height:80px
   }
 
   #cigarette {
@@ -65,7 +71,7 @@ body {
 
   #content {
   width: 270px;
-  margin: 5px;
+  margin: 3px;
   padding: 0px;
   }
 
@@ -76,7 +82,7 @@ body {
   padding: 3px 2px 3px 2px;
   margin: 1px auto 30px auto;
   border: 1px solid #ddd;
-  background: #fff;
+  background: null;
   background: linear-gradient(#f6f6f6 0, #fff 50px);
   background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
   background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
