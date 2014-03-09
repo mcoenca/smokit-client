@@ -5,28 +5,8 @@
 var Connect=function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
 
-var onSuccess = function(position) {
-    alert('Latitude: '          + position.coords.latitude          + '\n' +
-          'Longitude: '         + position.coords.longitude         + '\n' +
-          'Altitude: '          + position.coords.altitude          + '\n' +
-          'Accuracy: '          + position.coords.accuracy          + '\n' +
-          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-          'Heading: '           + position.coords.heading           + '\n' +
-          'Speed: '             + position.coords.speed             + '\n' +
-          'Timestamp: '         + position.timestamp                + '\n');
-};
-
-// onError Callback receives a PositionError object
-//
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
-}
-
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	if($deja_connect==false){
 		username=$('#username_connect').val();
-		localStorage.setItem('username',username);
 	}
 
 	//on fait la requete GET correspondante
@@ -40,6 +20,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		success: function(donnees){
 			//alert('connection réussie');
 			Connection_success(donnees);
+		localStorage.setItem('username',username);
 		},
 		error: function(xhr,textStatus,errorThrown){
 			//alert('erreur de connection');
@@ -98,7 +79,9 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
-
+	var lat=0;
+	var long=0;
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({

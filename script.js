@@ -8,6 +8,15 @@ var ready = function(){
 
 //Si on est déja connecté, on triche (haha) et on se connecte automatiquement avec deja_connect=true
 
+if (localStorage.getItem('username')!=null) {
+		
+	username=localStorage.getItem('username');
+	Connect(true);
+}
+else { 
+	$(".disconnected").show();
+}
+
 var onSuccess = function(position) {
     alert('Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
@@ -28,14 +37,6 @@ var onError = function(error) {
 
 
 
-/*if (localStorage.getItem('username')!=null) {
-		
-	username=localStorage.getItem('username');
-	Connect(true);
-}
-else { */
-	$(".disconnected").show();
-//}
 
 
 //}
@@ -44,7 +45,6 @@ else { */
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 		Connect(false);
 	});
 	//bouton animé en bleu

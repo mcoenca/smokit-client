@@ -250,4 +250,16 @@ var go_stats_home = function() {
 		$(".stats").hide();
 };
 
+//Fonction de la geoloc
+var onSuccess = function(position) {
+	//En cas de succès on modifie les variables lat et long de la smoke
+	lat=position.coords.latitude;
+	long=position.coords.longitude;
+};
+
+
+var onError = function(error) {
+//On ne fait rien en cas d'erreur 
+};
+
 

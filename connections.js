@@ -7,7 +7,6 @@ var Connect=function($deja_connect) {
 
 	if($deja_connect==false){
 		username=$('#username_connect').val();
-		localStorage.setItem('username',username);
 	}
 
 	//on fait la requete GET correspondante
@@ -21,6 +20,7 @@ var Connect=function($deja_connect) {
 		success: function(donnees){
 			//alert('connection réussie');
 			Connection_success(donnees);
+		localStorage.setItem('username',username);
 		},
 		error: function(xhr,textStatus,errorThrown){
 			//alert('erreur de connection');
@@ -79,7 +79,9 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
-
+	var lat=0;
+	var long=0;
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({
@@ -91,8 +93,8 @@ var Smoke = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
-				"smoke[smoke_latitude]":1,
-				"smoke[smoke_longitude]":2,
+				"smoke[smoke_latitude]":lat,
+				"smoke[smoke_longitude]":long,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
 			Smoke_success(donnees);
