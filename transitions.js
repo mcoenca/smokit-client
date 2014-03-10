@@ -15,8 +15,8 @@ var Connection_success = function($donnees) {
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
 	console.log($textStatus);
-alert($textStatus);
-alert($errorThrown);
+//alert($textStatus);
+//alert($errorThrown);
 	console.log($errorThrown);
 	//alert('Bug connection !');
 	if ($creation) {
@@ -263,11 +263,14 @@ var go_stats_home = function() {
 var onSuccess = function(position) {
 	//En cas de succès on modifie les variables lat et long de la smoke
 	lat=position.coords.latitude;
+alert(lat);
 	long=position.coords.longitude;
+alert(long);
 };
 
 
 var onError = function(error) {
+alert('error geoloc');
 //On ne fait rien en cas d'erreur 
 };
 
