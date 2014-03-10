@@ -82,7 +82,6 @@ var Stats = function() {
 //Création de Smoke
 var Smoke = function() {
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-	alert(1+"lat");
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({
@@ -94,7 +93,7 @@ var Smoke = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
-				"smoke[smoke_latitude]":lat,
+				"smoke[smoke_latitude]":la,
 				"smoke[smoke_longitude]":lon,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
