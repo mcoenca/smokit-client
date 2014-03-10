@@ -2,7 +2,7 @@
 //Définition de la variable importante, username
 var username='';
 var lat=0;
-var long=0;
+var lon=0;
 //Execute après le chargement du DOM
 var ready = function(){
 

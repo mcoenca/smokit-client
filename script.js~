@@ -53,6 +53,8 @@ else {
 			alert("Attends un peu !");
 		}
 		else {
+			lat=0;
+			long=0;
 			Smoke();
 		}
 	});

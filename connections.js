@@ -4,7 +4,7 @@
 //Var connection
 var Connect=function($deja_connect) {
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
-	//ert('je suis dans connect');
+	alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
 	}
@@ -95,7 +95,7 @@ var Smoke = function() {
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
 				"smoke[smoke_latitude]":lat,
-				"smoke[smoke_longitude]":long,
+				"smoke[smoke_longitude]":lon,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
 			alert('je suis dans success');
