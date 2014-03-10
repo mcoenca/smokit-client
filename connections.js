@@ -7,6 +7,8 @@ var Connect=function($deja_connect) {
 	//On met à jour la géoloc
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
+	alert(la);
+	alert(lon);
 	alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
@@ -84,6 +86,8 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
+	alert(la);
+	alert(lon);
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 	$.ajax({
