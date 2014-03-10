@@ -264,7 +264,13 @@ var onSuccess = function(position) {
 //En cas de succès on modifie les variables lat et long de la smoke
 
  $("#latitude_data").text(position.coords.latitude);
- $("#longitude_data").text(position.coords.longitude);
+ $("#longitude_data").text(position.coords.latitude);
+
+
+	la=position.coords.latitude;
+	alert(la);
+	lon=position.coords.longitude;
+	alert(lon);
 };
 
 

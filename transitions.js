@@ -268,9 +268,9 @@ var onSuccess = function(position) {
 
 
 	la=position.coords.latitude;
-	alert(la);
+	//alert(la);
 	lon=position.coords.longitude;
-	alert(lon);
+	//alert(lon);
 };
 
 

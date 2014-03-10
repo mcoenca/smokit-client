@@ -8,9 +8,9 @@ var Connect=function($deja_connect) {
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
-	alert("Apres"+la);
-	alert("Apres"+lon);
-	alert('je suis dans connect');
+	//alert("Apres"+la);
+	//alert("Apres"+lon);
+	//alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
 	}
@@ -25,8 +25,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
    				 },
 		success: function(donnees){
 			//alert('connection réussie');
-//alert('je suis dans success');
-	Connection_success(donnees);
+		Connection_success(donnees);
 		localStorage.setItem('username',username);
 		},
 		error: function(xhr,textStatus,errorThrown){
@@ -39,6 +38,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
 
 //Connection création
 var Create = function() {
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username dans l'input de texte "Nouvel util"
 	username=$('#username_create').val();
 	//on fait la requete POST correspondante
@@ -90,10 +90,8 @@ var Smoke = function() {
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
 
-	//var la=$("#latitude_data").text();
-	//var lon= $("#longitude_data").text();
-alert("Smoke"+la);
-alert('Smoke'+lon);
+	//alert("Smoke"+la);
+	//alert('Smoke'+lon);
 	$.ajax({
 			url: "http://holdit.herokuapp.com/newsmoke",
 			type: "post",
@@ -107,7 +105,7 @@ alert('Smoke'+lon);
 				"smoke[smoke_longitude]": lon,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
-			alert('je suis dans success');
+			//alert('je suis dans success');
 			Smoke_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
