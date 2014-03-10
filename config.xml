@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-    <icon src="/assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
-    <icon src="/assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
-    <icon src="/assets/icon-72-hdpi.png"  gap:platform="android" gap:density="hdpi"  />
-    <icon src="/assets/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
+    <icon src="assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
+    <icon src="assets/icon-72-hdpi.png"  gap:platform="android" gap:density="hdpi"  />
+    <icon src="assets/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
