@@ -1,7 +1,8 @@
 //Attend le chargement du DOM que ce soit en Ruby (page load) ou normal
 //Définition de la variable importante, username
 var username='';
-
+var lat=0;
+var long=0;
 //Execute après le chargement du DOM
 var ready = function(){
 
@@ -52,6 +53,8 @@ else {
 			alert("Attends un peu !");
 		}
 		else {
+			lat=0;
+			long=0;
 			Smoke();
 		}
 	});
