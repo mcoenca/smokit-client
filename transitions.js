@@ -261,16 +261,16 @@ var go_stats_home = function() {
 
 //Fonction de la geoloc
 var onSuccess = function(position) {
-	//En cas de succès on modifie les variables lat et long de la smoke
+//En cas de succès on modifie les variables lat et long de la smoke
 	la=position.coords.latitude;
-alert(la);
+//alert(la);
 	lon=position.coords.longitude;
-alert(lon);
+//alert(lon);
 };
 
 
 var onError = function(error) {
-alert('error geoloc');
+//alert('error geoloc');
 //On ne fait rien en cas d'erreur 
 };
 
