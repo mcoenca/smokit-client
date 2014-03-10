@@ -19,7 +19,7 @@
      <param name="android-package" value="org.apache.cordova.geolocation" />
   	 </feature> 
    <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
-<access origin="*" />
+<access origin="*" subdomains="true"/>
  <gap:plugin name="org.apache.cordova.geolocation" />
 
 </widget>
