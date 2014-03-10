@@ -3,8 +3,14 @@
 
 //Var connection
 var Connect=function($deja_connect) {
-	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
 
+	//On met à jour la géoloc
+
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
+	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
+	//alert("Apres"+la);
+	//alert("Apres"+lon);
+	//alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
 	}
@@ -19,10 +25,11 @@ var Connect=function($deja_connect) {
    				 },
 		success: function(donnees){
 			//alert('connection réussie');
-			Connection_success(donnees);
+		Connection_success(donnees);
 		localStorage.setItem('username',username);
 		},
 		error: function(xhr,textStatus,errorThrown){
+		//alert('je suis dans error');
 			//alert('erreur de connection');
 			Connection_failure(textStatus,errorThrown,false);
 		}
@@ -31,6 +38,7 @@ var Connect=function($deja_connect) {
 
 //Connection création
 var Create = function() {
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username dans l'input de texte "Nouvel util"
 	username=$('#username_create').val();
 	//on fait la requete POST correspondante
@@ -79,11 +87,11 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
-	var lat=0;
-	var long=0;
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
+
+	//alert("Smoke"+la);
+	//alert('Smoke'+lon);
 	$.ajax({
 			url: "http://holdit.herokuapp.com/newsmoke",
 			type: "post",
@@ -93,13 +101,15 @@ var Smoke = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
-				"smoke[smoke_latitude]":lat,
-				"smoke[smoke_longitude]":long,
+				"smoke[smoke_latitude]": la,
+				"smoke[smoke_longitude]": lon,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
+			//alert('je suis dans success');
 			Smoke_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
+			alert('je suis dans erreur');
 			Smoke_failure(textStatus,errorThrown);
 		}
 	});			
