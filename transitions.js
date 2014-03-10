@@ -5,7 +5,7 @@ var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 		//alert('connection reussie');
 		$(".connected").show();
-		$("#title_smoke").text(username);
+		$("#title_smoke").text("Une cigarette, "+username+" ?");
 		
 		//cache et remise à zéro de la page d'accueil
 		$(".disconnected").hide();
