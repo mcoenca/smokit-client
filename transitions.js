@@ -270,7 +270,7 @@ alert(lon);
 
 
 var onError = function(error) {
-alert('error geoloc);
+alert('error geoloc');
 //On ne fait rien en cas d'erreur 
 };
 
