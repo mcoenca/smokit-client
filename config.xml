@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-    <icon src="assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
-    <icon src="assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
-    <icon src="assets/icon-72-hdpi.png"  gap:platform="android" gap:density="hdpi"  />
-    <icon src="assets/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.example"
-        version     = "1.0.0" >
+  <widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    version     = "1.0.0" >
 
     <!-- versionCode is optional and Android only -->
 
     <name>Hold'it</name>
 
     <description>
-           A sample phonegap app where you can log your cigarettes and see reports
+      A sample phonegap app where you can log your cigarettes and see reports
     </description>
 
     <author email="m.coenca@gmail.com">
         John Connecté 
     </author>
- 	<feature name="Geolocation">
-     <param name="android-package" value="org.apache.cordova.geolocation" />
-  	 </feature> 
-   <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
-<access origin="*" subdomains="true"/>
- <gap:plugin name="org.apache.cordova.geolocation" />
+  	  <feature name="Geolocation">
+      <param name="android-package" value="org.apache.cordova.geolocation" />
+  	</feature> 
+    <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
+    <access origin="*" subdomains="true"/>
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    
+    <icon src="assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
+    <icon src="assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
+    <icon src="assets/icon-72-hdpi.png"  gap:platform="android" gap:density="hdpi"  />
+    <icon src="assets/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
 </widget>
