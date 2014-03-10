@@ -5,10 +5,11 @@
 var Connect=function($deja_connect) {
 
 	//On met à jour la géoloc
+
 navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	//On prend la variable username dans l'input "Connect" si on est pas déja connecté et on le met dans localStorage
-	alert(la);
-	alert(lon);
+	alert("Apres"+la);
+	alert("Apres"+lon);
 	alert('je suis dans connect');
 	if($deja_connect==false){
 		username=$('#username_connect').val();
@@ -24,7 +25,7 @@ navigator.geolocation.getCurrentPosition(onSuccess, onError);
    				 },
 		success: function(donnees){
 			//alert('connection réussie');
-//ert('je suis dans success');
+//alert('je suis dans success');
 	Connection_success(donnees);
 		localStorage.setItem('username',username);
 		},

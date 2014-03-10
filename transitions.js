@@ -262,9 +262,9 @@ var go_stats_home = function() {
 //Fonction de la geoloc
 var onSuccess = function(position) {
 //En cas de succès on modifie les variables lat et long de la smoke
-	la=position.coords.latitude;
+	var la=position.coords.latitude;
 	alert(la);
-	lon=position.coords.longitude;
+	var lon=position.coords.longitude;
 	alert(lon);
 };
 

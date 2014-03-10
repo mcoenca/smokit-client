@@ -263,9 +263,9 @@ var go_stats_home = function() {
 var onSuccess = function(position) {
 //En cas de succès on modifie les variables lat et long de la smoke
 	la=position.coords.latitude;
-//alert(la);
+	alert(la);
 	lon=position.coords.longitude;
-//alert(lon);
+	alert(lon);
 };
 
 
