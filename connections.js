@@ -87,10 +87,13 @@ var Stats = function() {
 
 //Création de Smoke
 var Smoke = function() {
-	alert(la);
-	alert(lon);
 	//On prend la variable username la où elle est ! C'est à dire déja bien réglée
 	//on fait la requete POST correspondante
+
+	//var la=$("#latitude_data").text();
+	//var lon= $("#longitude_data").text();
+alert("Smoke"+la);
+alert('Smoke'+lon);
 	$.ajax({
 			url: "http://holdit.herokuapp.com/newsmoke",
 			type: "post",
@@ -100,8 +103,8 @@ var Smoke = function() {
    				 },
 			data: {"authenticity_token":"WE9L/lhK8otgTy/+UZd8jOjGYBnRMs2I37JUL3v3tjQ=",
  				"user[name]":username,
-				"smoke[smoke_latitude]":la,
-				"smoke[smoke_longitude]":lon,
+				"smoke[smoke_latitude]": la,
+				"smoke[smoke_longitude]": lon,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
 			alert('je suis dans success');

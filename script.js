@@ -54,8 +54,6 @@ else {
 			alert("Attends un peu !");
 		}
 		else {
-			la=0;
-			lon=0;
 			Smoke();
 		}
 	});
