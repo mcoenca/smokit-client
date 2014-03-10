@@ -35,10 +35,10 @@ var Smoke_success = function($donnees) {
 	$('#smoke1').fadeOut( 100, function() {
     	//alert( "Animation1 complete." );
     	$('#smoke1').prop('disabled', true);
-    	$('#smoke2').fadeOut( 5000, function() {
+    	$('#smoke2').fadeOut( 4000, function() {
     		//alert( "Animation2 complete." );
 
-    		$('#smoke1').delay(10000).show( 0, function() {
+    		$('#smoke1').delay(5000).show( 0, function() {
     			//alert( "Animation3 complete." );
     			$('#smoke1').prop('disabled', false);
     				$('#smoke2').show( 0, function() {
@@ -90,14 +90,43 @@ var l = $donnees['smokes'].length;
 		}
 	}
 
-	var L = 0; //à modifier: garder le dernier L en mémoire ?
-	var T = 1; //à modifier: garder le dernier T en mémoire ?
+	var d1 = new Array(); //Tableau Nbre de clopes Par Jour
+	for (i=0;i<7;i++) {
+		d1[i]=new Array();
+			for (j=0;j<2;j++) {
+				d1[i][j]=0;
+		}
+	}
+
+	for (j=0;j<2;j++) {
+		for (i=0;i<7;i++) {
+			d1[i][0]=today-1000*60*60*24*(13-i);
+			d1[i][1]=0;
+		}
+	}
+
+	var L = 0; //parcourt d
+	var L1 = 0; // parcourt d1
+	var T = 1; //parcourt liste // à modifier: garder le dernier T en mémoire ?
 	var compteur=0;
 
 	if (liste[0]!=0) { //première clope
 		while ( T-1 < liste.length ) {       // Compte le nombre de nouvelles clopes/jour
 				
-			if ( (liste[T-1] > today-1000*60*60*24*7) ) {
+			if ( (liste[T-1] > today-1000*60*60*24*14) && (liste[T-1] < today-1000*60*60*24*7) ) {
+
+				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
+					compteur=compteur+1;
+				}
+				while ( L < 6 && d1[L1][0] != liste[T-1] ) {
+					L1=L1+1;
+				}
+				d1[L1][1]=d1[L1][1] + compteur;
+				L1=L1+1;
+				T=T+compteur;
+				compteur=0;
+			}
+			else if ( (liste[T-1] > today-1000*60*60*24*7) ) {
 
 				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
 					compteur=compteur+1;
@@ -109,7 +138,7 @@ var l = $donnees['smokes'].length;
 				L=L+1;
 				T=T+compteur;
 				compteur=0;
-			}
+			} 
 			T=T+1;
 		}
 	}
@@ -152,69 +181,47 @@ var l = $donnees['smokes'].length;
 	var options = {
 		xaxis: {
 			mode: "time",
-			tickLength: 5
+			tickLength: 5,
+			timeformat: "%a %d %m"
 		},
-		selection: {
-			mode: "x"
+		bars: { 
+			show: true, 
+			fill: true,
+			align: "center",
+			barWidth: 24*60*60*1000,
 		},
+		//selection: {
+		//	mode: "x"
+		//},
 		grid: {
-			markings: weekendAreas
+			markings: weekendAreas,
+			hoverable: true,
+			clickable: true,
+			backgroundColor: null,
 		}
 	};
 
-	var plot = $.plot("#placeholder", [d], options);
+	$("<div id='tooltip' class='stats'></div>").css({
+		position: "absolute",
+		display: "none",
+		//border: "1px solid #fdd",
+		padding: "2px",
+		//"background-color": "#fee",
+		opacity: 0.80,
+	}).appendTo("body");
 
-	var overview = $.plot("#overview", [d], {
-		series: {
-			lines: {
-				show: true,
-				lineWidth: 1
-			},
-			shadowSize: 0
-		},
-		xaxis: {
-			ticks: [],
-			mode: "time"
-		},
-		yaxis: {
-			ticks: [],
-			min: 0,
-			autoscaleMargin: 0.1
-		},
-		selection: {
-			mode: "x"
+	$("#placeholder").bind("plotclick", function (event, pos, item) {
+		if (item) {
+			var y = item.datapoint[1].toFixed(2);
+
+			$("#tooltip").html(y)
+				.css({top: item.pageY-20, left: item.pageX-20})
+				.fadeIn(200);
 		}
 	});
 
-	// now connect the two
-
-	$("#placeholder").bind("plotselected", function (event, ranges) {
-
-		// do the zooming
-
-		plot = $.plot("#placeholder", [d], $.extend(true, {}, options, {
-			xaxis: {
-				min: ranges.xaxis.from,
-				max: ranges.xaxis.to
-			}
-		}));
-
-		// don't fire event on the overview to prevent eternal loop
-
-		overview.setSelection(ranges, true);
-	});
-
-	$("#overview").bind("plotselected", function (event, ranges) {
-		plot.setSelection(ranges);
-	});
-
-	/*$.each($donnees['smokes'],function(){
-		$("#stat_table").append("<tr class='smoke_list'><th>"+this.smoke_date+
-		"</th><th>"+this.smoke_latitude+
-		"</th><th>"+this.smoke_longitude+
-		"</th></tr>")
-	}); 
-	*/
+	var plot = $.plot("#placeholder", [d], options);
+	
 };
 
 var Stats_failure = function($textStatus, $errorThrown) {

@@ -19,10 +19,12 @@ var Connect=function($deja_connect) {
    				 },
 		success: function(donnees){
 			//alert('connection réussie');
+alert('je suis dans success');
 			Connection_success(donnees);
 		localStorage.setItem('username',username);
 		},
 		error: function(xhr,textStatus,errorThrown){
+		alert('je suis dans error');
 			//alert('erreur de connection');
 			Connection_failure(textStatus,errorThrown,false);
 		}
@@ -97,9 +99,11 @@ var Smoke = function() {
 				"smoke[smoke_longitude]":long,
 				"smoke[smoke_date]":new Date()},
 		success: function(donnees){
+			alert('je suis dans success');
 			Smoke_success(donnees);
 		},
 		error: function(xhr,textStatus,errorThrown){
+			alert('je suis dans erreur');
 			Smoke_failure(textStatus,errorThrown);
 		}
 	});			

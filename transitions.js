@@ -15,6 +15,8 @@ var Connection_success = function($donnees) {
 var Connection_failure = function($textStatus,$errorThrown,$creation) {
 	//Connection ou création ratée, on affiche un message d'erreur
 	console.log($textStatus);
+alert($textStatus);
+alert($errorThrown);
 	console.log($errorThrown);
 	//alert('Bug connection !');
 	if ($creation) {
