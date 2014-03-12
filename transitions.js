@@ -167,13 +167,13 @@ var l = $donnees['smokes'].length;
 		d.setUTCMinutes(0);
 		d.setUTCHours(0);
 
-		var i = d.getTime();
+		var i = d.getTime()-12*60*60*1000;
 
 		// when we don't set yaxis, the rectangle automatically
 		// extends to infinity upwards and downwards
 
 		do {
-			markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 } });
+			markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 },color: "#ccffff" });
 			i += 7 * 24 * 60 * 60 * 1000;
 		} while (i < axes.xaxis.max);
 
@@ -184,7 +184,12 @@ var l = $donnees['smokes'].length;
 		xaxis: {
 			mode: "time",
 			tickLength: 5,
-			timeformat: "%a %d %m"
+			timeformat: "%a",
+			 axisLabelFontSizePixels:8,
+		},
+		yaxis: {
+			tickSize:1,
+			tickDecimals:0,
 		},
 		bars: { 
 			show: true, 
@@ -199,7 +204,6 @@ var l = $donnees['smokes'].length;
 			markings: weekendAreas,
 			hoverable: true,
 			clickable: true,
-			backgroundColor: null,
 		}
 	};
 
@@ -214,10 +218,10 @@ var l = $donnees['smokes'].length;
 
 	$("#placeholder").bind("plotclick", function (event, pos, item) {
 		if (item) {
-			var y = item.datapoint[1].toFixed(2);
+			var y = item.datapoint[1].toFixed(0);
 
 			$("#tooltip").html(y)
-				.css({top: item.pageY-20, left: item.pageX-20})
+				.css({top: item.pageY-20, left: item.pageX-7})
 				.fadeIn(200);
 		}
 	});

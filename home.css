@@ -22,6 +22,7 @@
 
 
 body {
+
   	padding-left: 0em;
   	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
@@ -80,9 +81,7 @@ body {
   width: 280px;
   height: 150px;
   padding: 3px 2px 3px 2px;
-  margin: 1px auto 30px auto;
   border: 1px solid #ddd;
-  background: null;
   background: linear-gradient(#f6f6f6 0, #fff 50px);
   background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
   background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
@@ -112,11 +111,22 @@ body {
     color: white
   }
 
+  p {
+    text-align: "center",
+  }
+
   a:link {
   	color:#0099cc
   }
   a:visited {
   	color:#cc6600
+  }
+  img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
   }
   address {
     font-family: Helvetica;
@@ -126,3 +136,4 @@ body {
     padding-top: 1em;
     border-top: thin dotted;
   }
+}
