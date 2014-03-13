@@ -204,6 +204,7 @@ var l = $donnees['smokes'].length;
 			markings: weekendAreas,
 			hoverable: true,
 			clickable: true,
+			backgroundColor: null,
 		}
 	};
 
