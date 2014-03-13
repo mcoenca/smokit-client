@@ -8,26 +8,54 @@
 	</head>
 
 	<body>
-		<img src="assets/logo_holdit.png" class="logo">
+		<div class="row">
+			<dic class="col-xs-12 col-md-12">
+				<img src="assets/logo_holdit.png" class="logo">
+			</div>
+		</div>
 		<!--Partie de code qui sera utilisée en non connecté-->
 		<div class='disconnected' style="display:none">
 		<p id="error1" style="display:none; color:red">Username non existant!</p>	
 		<p id="error2" type="hidden" style="display:none; color:red">Username déja pris!</p>
 
 			<form>
-				<h2 id="title">Username :</h2>
-					<input id="username_connect" type="text" style="text-align: right">
-				   	<img id="connect" src="assets/orange_ok_white.jpg" style="height:19px">
-				<br/><br/>
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<h2 id="title">Username :</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-8 col-md-8">
+							<input id="username_connect" type="text" style="text-align: right">
+					</div>
+					<div class="col-xs-4 col-md-4">
+					   	<img id="connect" src="assets/orange_ok_white.jpg" style="height:19px">
+					</div>
+				</div>
+					<br/><br/>
 
-				<p> Not registered yet ? </p>
-				<h2>New User :</h2>
-					<input id="username_create" type="text" style="text-align: right">
-					<img id="create" src="assets/orange_ok_white.jpg" style="height:19px">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<p> Not registered yet ? </p>
+						<h2>New User :</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-8 col-md-8">
+						<input id="username_create" type="text" style="text-align: right">
+					</div>
+					<div class="col-xs-4 col-md-4">
+						<img id="create" src="assets/orange_ok_white.jpg" style="height:19px">
+					</div>
+				</div>
 			</form>
 
-			<address>Made March 2014<br>
-			powered by 'Connectés 4ever'</address>
+			<div class="row">
+				<div class="col-xs-12 col-md-12">
+					<address>Made March 2014<br>
+					powered by 'Connectés 4ever'</address>
+				</div>
+			</div>
 
 		</div>
 

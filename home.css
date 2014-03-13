@@ -24,6 +24,7 @@ body {
   	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
     background-image:url('assets/fond_app.jpg');
+    width: 300px;
   }
 
   .logo {
@@ -44,9 +45,9 @@ body {
   }
 
   #connect { 
-    position: relative;
-    top: 3px;
-    left: -6px;
+    //position: relative;
+    //top: 3px;
+    //left: -6px;
   }
 
   #username_connect { 
@@ -63,8 +64,8 @@ body {
 
   #create { 
     position: relative;
-    top: 3px;
-    left: -6px;
+    //top: 3px;
+    //left: -6px;
   }
 
   #content {
