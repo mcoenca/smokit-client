@@ -66,7 +66,7 @@ var Stats = function() {
 	$(".smoke_list").remove();
 	$(".connected").hide();
 	$(".stats").show();
-	$("#title_stats").text("Tes stats, "+username+" !");
+	$("#title_stats").text("Your stats, "+username+" !");
 	//requete ajax pour  remplir le tableau joli !
 	$.ajax({
 		url: "http://holdit.herokuapp.com/users/name/"+username+".json",

@@ -5,7 +5,7 @@ var Connection_success = function($donnees) {
 	//Connection réussie ! Ici on va écrire les modifications pour passer de non connecté à connecté dans le DOM
 		//alert('connection reussie');
 		$(".connected").show();
-		$("#title_smoke").text("Une cigarette, "+username+" ?");
+		$("#title_smoke").text("Light it up, "+username+" !");
 		
 		//cache et remise à zéro de la page d'accueil
 		$(".disconnected").hide();
@@ -125,7 +125,7 @@ var l = $donnees['smokes'].length;
 				}
 				d1[L1][1]=d1[L1][1] + compteur;
 				L1=L1+1;
-				T=T+compteur;
+				T=T+compteur-1;
 				compteur=0;
 			}
 			else if ( (liste[T-1] > today-1000*60*60*24*7) ) {
@@ -138,7 +138,7 @@ var l = $donnees['smokes'].length;
 				}
 				d[L][1]=d[L][1] + compteur;
 				L=L+1;
-				T=T+compteur;
+				T=T+compteur-1;
 				compteur=0;
 			} 
 			T=T+1;
@@ -173,7 +173,7 @@ var l = $donnees['smokes'].length;
 		// extends to infinity upwards and downwards
 
 		do {
-			markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 },color: "#ccffff" });
+			markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 },color: "rgba(254,255,255,0.3)" });
 			i += 7 * 24 * 60 * 60 * 1000;
 		} while (i < axes.xaxis.max);
 
@@ -183,19 +183,21 @@ var l = $donnees['smokes'].length;
 	var options = {
 		xaxis: {
 			mode: "time",
-			tickLength: 5,
+			tickLength: 10,
 			timeformat: "%a",
-			 axisLabelFontSizePixels:8,
+			 axisLabelFontSizePixels:10,
 		},
 		yaxis: {
 			tickSize:1,
 			tickDecimals:0,
 		},
 		bars: { 
-			show: true, 
+			show: true,
 			fill: true,
+			fillColor:"rgba(204,102,0,0.7)",
 			align: "center",
-			barWidth: 24*60*60*1000,
+			barWidth: 14*60*60*1000,
+			lineWidth:0,
 		},
 		//selection: {
 		//	mode: "x"
@@ -205,7 +207,10 @@ var l = $donnees['smokes'].length;
 			hoverable: true,
 			clickable: true,
 			backgroundColor: null,
-		}
+		},
+		highlightColor: "rgba(0,153,204,0.9)",
+		
+
 	};
 
 	$("<div id='tooltip' class='stats'></div>").css({
@@ -227,7 +232,7 @@ var l = $donnees['smokes'].length;
 		}
 	});
 
-	var plot = $.plot("#placeholder", [d], options);
+	var plot = $.plot("#placeholder", [d], options).highlight(0,6);
 	
 };
 
@@ -244,7 +249,7 @@ var Stats_failure = function($textStatus, $errorThrown) {
 var go_stats_smoke = function() {
 		$(".connected").show();
 		$(".stats").hide();
-		$("#title_stats").text("Tes stats, "+username+" !");
+		$("#title_stats").text("Your stats, "+username+" !");
 };
 
 //Quand on clique sur le bouton go_smoke->home

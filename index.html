@@ -9,7 +9,7 @@
 
 	<body>
 		<div class="row">
-			<dic class="col-xs-12 col-md-12">
+			<div class="col-xs-12 col-md-12 text-center">
 				<img src="assets/logo_holdit.png" class="logo">
 			</div>
 		</div>
@@ -20,31 +20,31 @@
 
 			<form>
 				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<h2 id="title">Username :</h2>
+					<div class="col-xs-12 col-md-12 text-center">
+						<h2 id="title">Username</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-8 col-md-8">
-							<input id="username_connect" type="text" style="text-align: right">
+					<div class="col-xs-8 col-md-8 text-right">
+							<input id="username_connect" type="text">
 					</div>
-					<div class="col-xs-4 col-md-4">
+					<div class="col-xs-4 col-md-4 text-left">
 					   	<img id="connect" src="assets/orange_ok_white.jpg" style="height:19px">
 					</div>
 				</div>
 					<br/><br/>
 
 				<div class="row">
-					<div class="col-xs-12 col-md-12">
+					<div class="col-xs-12 col-md-12 text-center">
 						<p> Not registered yet ? </p>
-						<h2>New User :</h2>
+						<h2>New User</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-8 col-md-8">
+					<div class="col-xs-8 col-md-8 text-right">
 						<input id="username_create" type="text" style="text-align: right">
 					</div>
-					<div class="col-xs-4 col-md-4">
+					<div class="col-xs-4 col-md-4 text-left">
 						<img id="create" src="assets/orange_ok_white.jpg" style="height:19px">
 					</div>
 				</div>
@@ -62,20 +62,31 @@
 		<!--Partie de code qui sera utilisée en connecté-->
 		<div class='connected' style="display:none">
 		<!--Beaucoup d'animations Jquery à faire la-->
-			<div id="cigarette">
-				<img id="smoke3" src="assets/clope_cramee.png">
-				<img id="smoke2" src="assets/clope_allumee.png">
-				<img id="smoke1" src="assets/clope_eteinte.png">
+			<div class="row">
+				<div class="col-xs-12 col-md-12 text-center">
+					<div id="cigarette">
+						<img id="smoke3" src="assets/clope_cramee.png">
+						<img id="smoke2" src="assets/clope_allumee.png">
+						<img id="smoke1" src="assets/clope_eteinte.png">
+					</div>
+				</div>
 			</div>
-			<p id="title_smoke"></p> 
-			<footer>
-				<img src="assets/icon_smoke_blue.png" style="height:50px">
-				<img id="go_smoke_stats" src="assets/icon_stats_white.png" style="height:50px">
-				<img id="go_smoke_home" src="assets/icon_logout_white.png" style="height:50px">
-			</footer>
-			<!--logo à placer
-			<img src="assets/logo_Hit.png" style="height:50px">
-			-->
+			<div class="row">
+				<div class="col-xs-12 col-md-12 text-center">
+					<p id="title_smoke"></p> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-md-4 text-center">
+					<img src="assets/icon_smoke_blue.png" class="icone">
+				</div>
+				<div class="col-xs-4 col-md-4 text-center">
+					<img id="go_smoke_stats" src="assets/icon_stats_white.png" class="icone">
+				</div>
+				<div class="col-xs-4 col-md-4 text-center">
+					<img id="go_smoke_home" src="assets/icon_logout_white.png" class="icone">
+				</div>
+			</div>
 		</div>
 
 		<!--Partie de code qui sera utilisé en stats-->
@@ -92,28 +103,32 @@
 			-->
 			<div id="content">
 
-				<div class="demo-container">
-					<div id="placeholder" class="demo-placeholder"></div>
-
+				<div class="row">
+					<div class="col-xs-12 col-md-12 text-center">
+						<div class="demo-container">
+							<div id="placeholder" class="demo-placeholder"></div>
+						</div>
+					</div>
 				</div>
 
-				<!--<div class="demo-container" style="height:150px;">
-					<div id="overview" class="demo-placeholder"></div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12 text-center">
+						<p>Your last smokes</p>
+					</div>
 				</div>
-				-->
-
-				<p>Ce que tu as fûmé ces 7 derniers jours</p>
-
 			</div>
-			
-			<footer>
-				<img id="go_stats_smoke" src="assets/icon_smoke_white.png" style="height:50px">
-				<img src="assets/icon_stats_blue.png" style="height:50px">
-				<img id="go_stats_home" src="assets/icon_logout_white.png" style="height:50px">
-			</footer>
-			<!--logo à placer
-			<img src="assets/logo_Hit.png" style="height:50px">
-			-->
+
+			<div class="row">
+				<div class="col-xs-4 col-md-4 text-center">
+					<img id="go_stats_smoke" src="assets/icon_smoke_white.png" class="icone">
+				</div>
+				<div class="col-xs-4 col-md-4 text-center">
+					<img src="assets/icon_stats_blue.png" class="icone">
+				</div>
+				<div class="col-xs-4 col-md-4 text-center">
+					<img id="go_stats_home" src="assets/icon_logout_white.png" class="icone">
+				</div>
+			</div>
 		</div>
 
 		<script src="jquery.js"></script>
