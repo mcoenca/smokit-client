@@ -27,26 +27,44 @@ body {
     /*width: 20em;*/
   }
 
+  .fix{
+    position:fixed;
+    bottom:14em;
+    left:50%;
+  }
+
+  .navbar-default {
+    background-color: #ff9933;
+    border-color: #ff9933;
+  }
+
   .icone {
     height:4em;
+    padding-top: 0.4em;
   }
 
   .logo {
     height:7em;
     vertical-align:middle;
+    padding-left:1em;
+  }
+
+  #title_smoke {
+    padding: 1em 0em 1em 0em;
+    vertical-align: middle;
   }
 
   #cigarette {
-    height: 12em;
+    //height: 10%;
     /*width: 200px;*/
     position: relative;
-    left:-7.5em;
+    left:-2.5em;
   }
 
 
   #cigarette img {
     position: absolute;
-    width: 10em;
+    width: 5em;
     /*left:-3px;*/
   }
 
@@ -135,6 +153,7 @@ body {
   p {
     text-align: center;
     font-size: 130%;
+    margin:0px;
   }
 
   a:link {

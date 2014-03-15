@@ -194,7 +194,7 @@ var l = $donnees['smokes'].length;
 		bars: { 
 			show: true,
 			fill: true,
-			fillColor:"rgba(204,102,0,0.7)",
+			fillColor:"rgba(255,153,51,0.8)",
 			align: "center",
 			barWidth: 14*60*60*1000,
 			lineWidth:0,
