@@ -21,7 +21,7 @@
 
 body {
   	padding-left: 1em;
-  	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
+  	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
     background-image:url('assets/fond_app.jpg');
     /*width: 20em;*/
@@ -152,7 +152,9 @@ body {
   }
   */
   h2 {
-    font-family: "space_1", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
+    font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light",
+                 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+                  Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
     color: white;
     text-align: center;
   }
