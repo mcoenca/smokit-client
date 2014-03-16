@@ -81,6 +81,10 @@ var l = $donnees['smokes'].length;
 		liste[i] = date; 
 		i=i+1;
 	});
+
+//Insérer un tri de la liste par date idi !!!
+	liste.sort(function(a,b){return a - b});
+
 	var d = new Array(); //Tableau Nbre de clopes Par Jour
 	for (i=0;i<7;i++) {
 		d[i]=new Array();
@@ -119,7 +123,7 @@ var l = $donnees['smokes'].length;
 	if (liste[0]!=0) { //première clope
 		while ( T-1 < liste.length ) {       // Compte le nombre de nouvelles clopes/jour
 				
-			if ( (liste[T-1] > today-1000*60*60*24*14) && (liste[T-1] < today-1000*60*60*24*7) ) {
+			if ( (liste[T-1] > today-1000*60*60*24*14) && (liste[T-1] < today-1000*60*60*24*6) ) {
 
 				while ( (T+compteur-1 < liste.length) && (liste[T+compteur-1]==liste[T-1]) ) {   //même jour que la/les clope(s) précédente(s) ?
 					compteur=compteur+1;
@@ -149,12 +153,19 @@ var l = $donnees['smokes'].length;
 		}
 	}
 
+
+	for (i=0;i<7;i++) {
+		d1[i][0]=d1[i][0]+1000*60*60*24*7;
+	}
+
+
 	// first correct the timestamps - they are recorded as the daily
 	// midnights in UTC+0100, but Flot always displays dates in UTC
 	// so we have to add one hour to hit the midnights in the plot
 
 	for (var i = 0; i < d.length; ++i) {
 		d[i][0] += 60 * 60 * 1000;
+		d1[i][0] += 60 * 60 * 1000;
 	}
 
 	// helper for returning the weekends in a period
@@ -184,6 +195,37 @@ var l = $donnees['smokes'].length;
 		return markings;
 	}
 
+	var data = [
+		{
+			color:"rgba(102,51,0,0.5)",
+			label: "Last week",
+			data: d1,
+			bars: { 
+				show: true,
+				fill: true,
+				fillColor:"rgba(102,51,0,0.5)",
+				align: "right",
+				barWidth: 10*60*60*1000,
+				lineWidth:0,
+			},
+			highlightColor: "rgba(0,102,153,0.8)",
+		},
+		{
+			color:"rgba(255,153,51,0.7)",
+			label: "This week",
+			data:d,
+			bars: { 
+				show: true,
+				fill: true,
+				fillColor:"rgba(255,153,51,0.7)",
+				align: "left",
+				barWidth: 10*60*60*1000,
+				lineWidth:0,
+			},
+			highlightColor: "rgba(0,153,204,0.8)",
+		},
+	]
+
 	var options = {
 		xaxis: {
 			mode: "time",
@@ -195,14 +237,6 @@ var l = $donnees['smokes'].length;
 			tickSize:1,
 			tickDecimals:0,
 		},
-		bars: { 
-			show: true,
-			fill: true,
-			fillColor:"rgba(255,153,51,0.8)",
-			align: "center",
-			barWidth: 14*60*60*1000,
-			lineWidth:0,
-		},
 		//selection: {
 		//	mode: "x"
 		//},
@@ -212,9 +246,15 @@ var l = $donnees['smokes'].length;
 			clickable: true,
 			backgroundColor: null,
 		},
-		highlightColor: "rgba(0,153,204,0.9)",
-		
-
+		legend: {
+		    labelBoxBorderColor: null,
+		    noColumns: 2,
+		    margin:[10,0],
+		    //position:"nw",
+		    backgroundColor: 'white',
+		    backgroundOpacity: 0.5,
+		    container: "#legend",
+		}
 	};
 
 	$("<div id='tooltip' class='stats'></div>").css({
@@ -231,12 +271,12 @@ var l = $donnees['smokes'].length;
 			var y = item.datapoint[1].toFixed(0);
 
 			$("#tooltip").html(y)
-				.css({top: item.pageY-20, left: item.pageX-7})
+				.css({top: item.pageY-30, left: item.pageX-7})
 				.fadeIn(200);
 		}
 	});
 
-	var plot = $.plot("#placeholder", [d], options).highlight(0,6);
+	var plot = $.plot("#placeholder", data, options).highlight(1,6);
 	
 };
 
