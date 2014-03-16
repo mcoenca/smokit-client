@@ -22,15 +22,15 @@
 body {
   	padding-left: 0px;
   	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
-    color: #cc6600;
-    background-image:url('assets/fond_app.jpg');
-    width: 300px;
+    	color: #cc6600;
+   	background-image:url('assets/fond_app.jpg');
+    /* width: 300px; */
   }
-
+/*
   .logo {
   height:80px
   }
-
+*/
   #cigarette {
     height: 160px;
     width: 200px;
@@ -40,10 +40,10 @@ body {
 
   #cigarette img {
     position: absolute;
-    width: 150px;
+   width: 150px;
     left:-3px;
   }
-
+/*
   #connect { 
     //position: relative;
     //top: 3px;
@@ -97,7 +97,7 @@ body {
   height: 100%;
   font-size: 14px;
   line-height: 1.2em;
-  }
+  } */
 
   h1 {
   	font-family: "UpperEastSide", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
@@ -108,7 +108,7 @@ body {
     font-family: "space_1", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
     color: white
   }
-
+/*
   p {
     text-align: "center",
   }
@@ -135,3 +135,4 @@ body {
     border-top: thin dotted;
   }
 }
+*/
