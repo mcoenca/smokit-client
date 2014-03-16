@@ -68,15 +68,19 @@ var l = $donnees['smokes'].length;
 	
 	var i=0;
 	var liste = new Array();
+	var da= '';
+	var dat= new Date();
 	var date= new Date();
 	var today= Date.parse(Date().substring(0,15)).getTime();
 
 	$.each($donnees['smokes'],function() { 
-		date = Date.parse( this.smoke_date.substring(0,10) );
-		liste[i] = date.getTime();
-			i=i+1;
+		da= Date.parse(this.smoke_date.substring(0,19)); //Date&Heure-1
+		dat = new Date(da.setHours(da.getHours()+1));//Date&Heure
+		date=dat.toString().substring(0,15); //que le jour (pas l'heure)
+		date=Date.parse(date).getTime();//Datemillisecs
+		liste[i] = date; 
+		i=i+1;
 	});
-
 	var d = new Array(); //Tableau Nbre de clopes Par Jour
 	for (i=0;i<7;i++) {
 		d[i]=new Array();

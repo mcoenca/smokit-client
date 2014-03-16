@@ -36,11 +36,13 @@ body {
   .navbar-default {
     background-color: #ff9933;
     border-color: #ff9933;
+    height:3em;
+    min-height:2em;
   }
 
   .icone {
-    height:4em;
-    padding-top: 0.4em;
+    height:3em;
+    padding-top: 0.2em;
   }
 
   .logo {
@@ -69,10 +71,17 @@ body {
   }
 
   #connect { 
-    position:absolute;
+    //position:relative;
     //top: 3px;
     //left: -6px;
-    margin-left:-1.5em;
+    margin-left:0em;
+  }
+
+  #create { 
+    //position:relative;
+    //top: 3px;
+    //left: -6px;
+    margin-left:0em;
   }
 
   #username_connect { 
@@ -94,14 +103,12 @@ body {
     margin-left:auto;
     margin-right:0em;
     color:#0099cc;
-    padding:0px;
+    padding:0em;
   }
 
-  #create { 
-    position:absolute;
-    //top: 3px;
-    //left: -6px;
-    margin-left:-1.5em;
+  #tooltip {
+    font-size:18px;
+    color:#0099cc;
   }
 
   /*
