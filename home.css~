@@ -20,76 +20,122 @@
 }
 
 body {
-  	padding-left: 0px;
-  	font-family: Helvetica, Georgia, "Times New Roman",Times, serif;
+
+  	padding-left: 1em;
+  	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
     background-image:url('assets/fond_app.jpg');
-    width: 300px;
+    /*width: 20em;*/
+  }
+
+  .fix{
+    position:fixed;
+    bottom:14em;
+    left:50%;
+  }
+
+  .navbar-default {
+    background-color: #ff9933;
+    border-color: #ff9933;
+    height:3em;
+    min-height:2em;
+  }
+
+  .icone {
+    height:3em;
+    padding-top: 0.2em;
   }
 /*
   .logo {
-  height:80px
+    height:7em;
+    vertical-align:middle;
+    padding-left:1em;
+  }
+
+  #title_smoke {
+    padding: 1em 0em 1em 0em;
+    vertical-align: middle;
   }
 */
   #cigarette {
-    height: 160px;
-    width: 200px;
+    //height: 10%;
+    /*width: 200px;*/
     position: relative;
-    left:-5px;
+    left:-2.5em;
   }
+
 
   #cigarette img {
     position: absolute;
-   width: 150px;
-    left:-3px;
+    width: 5em;
+    /*left:-3px;*/
   }
 /*
   #connect { 
-    //position: relative;
+    //position:relative;
     //top: 3px;
     //left: -6px;
+    margin-left:0em;
+  }
+
+  #create { 
+    //position:relative;
+    //top: 3px;
+    //left: -6px;
+    margin-left:0em;
   }
 
   #username_connect { 
     border: none;
-    height: 17px;
+    height: 19px;
     font-size: 16px;
+    line-height:0px;
+    margin-left:auto;
+    margin-right:0px;
+    color:#0099cc;
+    padding:0em;
   }
 
   #username_create { 
     border: none;
-    height: 17px;
+    height: 19px;
     font-size: 16px;
+    line-height:0px;
+    margin-left:auto;
+    margin-right:0em;
+    color:#0099cc;
+    padding:0em;
   }
 
-  #create { 
-    position: relative;
-    //top: 3px;
-    //left: -6px;
+  #tooltip {
+    font-size:18px;
+    color:#0099cc;
   }
 
+  /*
   #content {
-  width: 270px;
-  margin: 3px;
-  padding: 0px;
+    width: 270px;
+    margin: 3px;
+    padding: 0px;
   }
+  */
 
   .demo-container {
-  box-sizing: border-box;
-  width: 280px;
-  height: 150px;
-  padding: 3px 2px 3px 2px;
-  border: 1px solid #ddd;
-  background: linear-gradient(#f6f6f6 0, #fff 50px);
-  background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
-  background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
-  background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
-  background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    /*width: 280px;*/
+    height: 150px;
+    padding: 3px 2px 3px 2px;
+    /*border: 1px solid #ddd;
+    /*background: linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    -o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);*/
   }
 
   .demo-placeholder {
@@ -97,20 +143,31 @@ body {
   height: 100%;
   font-size: 14px;
   line-height: 1.2em;
+<<<<<<< HEAD
   } */
+=======
+  background:transparent;
+  }
+>>>>>>> 3a3eccba976331dde9dd56d42408797ee1d8979d
 
-  h1 {
+  /*h1 {
   	font-family: "UpperEastSide", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
     color: #0099cc;
     font-size:400%;
   }
+  */
   h2 {
-    font-family: "space_1", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
-    color: white
+    font-family: "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light",
+                 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+                  Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
+    color: white;
+    text-align: center;
   }
 /*
   p {
-    text-align: "center",
+    text-align: center;
+    font-size: 130%;
+    margin:0px;
   }
 
   a:link {
@@ -133,6 +190,7 @@ body {
     margin-top: 1em;
     padding-top: 1em;
     border-top: thin dotted;
+    text-align: center;
   }
 }
 */
