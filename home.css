@@ -20,6 +20,7 @@
 }
 
 body {
+
   	padding-left: 1em;
   	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Georgia, "Times New Roman",Times, serif;
     color: #cc6600;
@@ -44,7 +45,7 @@ body {
     height:3em;
     padding-top: 0.2em;
   }
-
+/*
   .logo {
     width:90%;
     vertical-align:middle;
@@ -55,7 +56,7 @@ body {
     padding: 1em 0em 1em 0em;
     vertical-align: middle;
   }
-
+*/
   #cigarette {
     //height: 10%;
     /*width: 200px;*/
@@ -69,7 +70,7 @@ body {
     width: 5em;
     /*left:-3px;*/
   }
-
+/*
   #connect { 
     //position:relative;
     //top: 3px;
@@ -145,6 +146,7 @@ body {
   background:transparent;
   }
 
+
   /*h1 {
   	font-family: "UpperEastSide", Helvetica, Geneva, Arial, SunSans-Regular,sans-serif;
     color: #0099cc;
@@ -158,7 +160,7 @@ body {
     color: white;
     text-align: center;
   }
-
+/*
   p {
     text-align: center;
     font-size: 130%;
@@ -188,3 +190,4 @@ body {
     text-align: center;
   }
 }
+*/

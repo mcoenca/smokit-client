@@ -1,25 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.phonegap.example"
-        version     = "1.0.0" >
+  <widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.phonegap.example"
+    version     = "1.0.0" >
 
     <!-- versionCode is optional and Android only -->
 
     <name>Hold'it</name>
 
     <description>
-           A sample phonegap app where you can log your cigarettes and see reports
+      A sample phonegap app where you can log your cigarettes and see reports
     </description>
 
     <author email="m.coenca@gmail.com">
         John Connecté 
     </author>
- 	<feature name="Geolocation">
-     <param name="android-package" value="org.apache.cordova.geolocation" />
-  	 </feature> 
-   <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
-<access origin="*" />
- <gap:plugin name="org.apache.cordova.geolocation" />
+  	  <feature name="Geolocation">
+      <param name="android-package" value="org.apache.cordova.geolocation" />
+  	</feature> 
+  	
+<preference name="fullscreen" value="true" />
+<preference name="Fullscreen" value="true" />
+<preference name="webviewbounce" value="true" />
+<preference name="Orientation" value="portrait" />
+<preference name="DisallowOverscroll" value="true"/>
+<preference name="splash-screen-duration" value="10000"/> 
+<preference name="splashscreen" value="splash" />
+<preference name="show-splash-screen-spinner" value="true" />
+<preference name="auto-hide-splash-screen" value="true" />
+
+
+
+    <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
+    <access origin="*" subdomains="true"/>
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+	<gap:plugin name="org.apache.cordova.vibration" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
+    
+    <icon src="assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
+    <icon src="assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
+    <icon src="assets/icon-72-hdpi.png"  gap:platform="android" gap:density="hdpi"  />
+    <icon src="assets/icon-96-xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash gap:density="ldpi" gap:platform="android" src="assets/splash_ldpi.png" />
+    <gap:splash gap:density="mdpi" gap:platform="android" src="assets/splash_mdpi.png" />
+    <gap:splash gap:density="hdpi" gap:platform="android" src="assets/splash_hdpi.png" />
+    <gap:splash gap:density="xhdpi" gap:platform="android" src="assets/splash_xhdpi.png" />
+
 
 </widget>
