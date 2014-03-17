@@ -21,6 +21,9 @@
 <preference name="Fullscreen" value="true" />
 <preference name="Orientation" value="portrait" />
 <preference name="DisallowOverscroll" value="true"/>
+<preference name="splash-screen-duration" value="10000"/> 
+<preference name="splashscreen" value="splash" />
+
 
 
     <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->

@@ -18,6 +18,13 @@
   	  <feature name="Geolocation">
       <param name="android-package" value="org.apache.cordova.geolocation" />
   	</feature> 
+<preference name="Fullscreen" value="true" />
+<preference name="Orientation" value="portrait" />
+<preference name="DisallowOverscroll" value="true"/>
+<preference name="splash-screen-duration" value="10000"/> 
+
+
+
     <!-- <preference name="LoadUrlTimeoutValue" value="50000" /> -->
     <access origin="*" subdomains="true"/>
     <gap:plugin name="org.apache.cordova.geolocation" />
