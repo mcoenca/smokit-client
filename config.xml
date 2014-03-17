@@ -2,11 +2,11 @@
   <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.example"
-    version     = "1.0.0" >
+    version     = "1.1.0" >
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Hold'it</name>
+    <name>Hold It</name>
 
     <description>
       A sample phonegap app where you can log your cigarettes and see reports
