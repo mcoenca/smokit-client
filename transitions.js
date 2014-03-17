@@ -34,8 +34,6 @@ var Smoke_success = function($donnees) {
 	//Création de smoke réussie, petite animation
 	//alert('Smoke créée... !');
 	//On fait vibrer le portable et beep beep (youpi) !
-	navigator.notification.vibrate(2500);
-	navigator.notification.beep(2);
 	$('#smoke1').fadeOut( 100, function() {
     	//alert( "Animation1 complete." );
     	$('#smoke1').prop('disabled', true);
@@ -51,7 +49,8 @@ var Smoke_success = function($donnees) {
     		});
     	});	
     });
-
+	navigator.notification.vibrate(2500);
+	navigator.notification.beep(2);
 };
 
 var Smoke_failure = function($textStatus, $errorThrown) {
