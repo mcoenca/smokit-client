@@ -45,7 +45,7 @@ body {
     height:3em;
     padding-top: 0.2em;
   }
-/*
+
   .logo {
     width:90%;
     vertical-align:middle;
@@ -56,7 +56,7 @@ body {
     padding: 1em 0em 1em 0em;
     vertical-align: middle;
   }
-*/
+
   #cigarette {
     //height: 10%;
     /*width: 200px;*/
@@ -70,7 +70,7 @@ body {
     width: 5em;
     /*left:-3px;*/
   }
-/*
+
   #connect { 
     //position:relative;
     //top: 3px;
@@ -160,7 +160,7 @@ body {
     color: white;
     text-align: center;
   }
-/*
+
   p {
     text-align: center;
     font-size: 130%;
@@ -190,4 +190,4 @@ body {
     text-align: center;
   }
 }
-*/
+
