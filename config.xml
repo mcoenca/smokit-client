@@ -30,6 +30,8 @@
     <access origin="*" subdomains="true"/>
     <gap:plugin name="org.apache.cordova.geolocation" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
+	<gap:plugin name="org.apache.cordova.vibration" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
     
     <icon src="assets/icon-36-ldpi.png"  gap:platform="android" gap:density="ldpi"  />
     <icon src="assets/icon-48-mdpi.png"  gap:platform="android" gap:density="mdpi"  />
