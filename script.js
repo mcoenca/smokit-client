@@ -3,6 +3,7 @@
 var username='';
 var la=0;
 var lon=0;
+var timer=0;
 
 //Execute après le chargement du DOM
 var ready = function(){

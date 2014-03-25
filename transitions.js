@@ -278,9 +278,10 @@ var l = $donnees['smokes'].length;
 	});
 
 	var plot = $.plot("#placeholder", data, options).highlight(1,6);
-	
-
+	timer+=timer;
+	if (timer==2){
 	setTimeout(function(){alert("Tu as appuyé sur le bouton")},10000);
+	}
 };
 
 var Stats_failure = function($textStatus, $errorThrown) {

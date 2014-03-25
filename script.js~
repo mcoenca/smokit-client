@@ -3,6 +3,7 @@
 var username='';
 var la=0;
 var lon=0;
+var timer=1;
 
 //Execute après le chargement du DOM
 var ready = function(){
@@ -24,7 +25,7 @@ else {
 
 //Quand on clique sur le bouton d'id 'Connect'
 	$('#connect').click(function() {
-	alert('je clique sur le bouton');
+	//alert('je clique sur le bouton');
 		Connect(false);
 	});
 	//bouton animé en bleu
